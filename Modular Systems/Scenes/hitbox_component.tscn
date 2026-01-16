@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://blea043vhsw3x"]
+
+[ext_resource type="Script" uid="uid://dvky0kc4lvkev" path="res://oyun/Modular Systems/Codes/hitbox.gd" id="1_n2kro"]
+
+[node name="HitboxComponent" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_n2kro")
+
+[node name="HitboxShape" type="CollisionShape2D" parent="."]
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
