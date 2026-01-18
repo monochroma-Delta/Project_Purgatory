@@ -1,12 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cydp1cb282ntq"]
+[gd_scene load_steps=2 format=3 uid="uid://blea043vhsw3x"]
 
-[ext_resource type="Script" uid="uid://blllbufkh3jpy" path="res://Project Purgatory/Modular Systems/Codes/hurtbox_component.gd" id="1_a8jt5"]
+[ext_resource type="Script" uid="uid://dvky0kc4lvkev" path="res://Project Purgatory/Modular Systems/Scripts/hurtbox_component.gd" id="1_us34f"]
 
 [node name="HurtboxComponent" type="Area2D"]
-collision_layer = 4
-collision_mask = 8
-monitoring = false
-monitorable = false
-script = ExtResource("1_a8jt5")
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_us34f")
 
-[node name="HurtboxShape" type="CollisionShape2D" parent="."]
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
