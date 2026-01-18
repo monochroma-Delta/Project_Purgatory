@@ -1,4 +1,4 @@
 extends Area2D
-class_name HurtboxComponent
+class_name HitboxComponent
 
 @export var damage_amount: float
