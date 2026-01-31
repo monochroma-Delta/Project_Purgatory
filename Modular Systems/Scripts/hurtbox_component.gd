@@ -5,7 +5,7 @@ class_name HurtboxComponent
 
 
 func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	health_component.damage(area.damage_amount)
+	health_component.get_damage(area.damage_amount)
 
 
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
