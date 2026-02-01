@@ -1,0 +1,304 @@
+[gd_scene format=3 uid="uid://h8187ermycbd"]
+
+[ext_resource type="Texture2D" uid="uid://vm1hbia85pwh" path="res://AliceSprites/SpriteReference.png" id="1_ovttf"]
+[ext_resource type="Texture2D" uid="uid://bja1b7jxu1ihm" path="res://AliceSprites/LeftSprites/Legging.png" id="2_fne60"]
+[ext_resource type="Texture2D" uid="uid://dxf2raybft5s7" path="res://AliceSprites/LeftSprites/Arm1.png" id="3_41lh5"]
+[ext_resource type="Texture2D" uid="uid://d183ktbkvwj5a" path="res://AliceSprites/LeftSprites/Gauntlet1.png" id="4_rkgpt"]
+[ext_resource type="Texture2D" uid="uid://bhg52hlrve77" path="res://AliceSprites/LeftSprites/Chestplate.png" id="5_jx5k2"]
+[ext_resource type="Texture2D" uid="uid://dv523xlansvu0" path="res://AliceSprites/LeftSprites/Arm.png" id="6_ub1f2"]
+[ext_resource type="Texture2D" uid="uid://x30u7j3y40fa" path="res://AliceSprites/LeftSprites/Gauntlet.png" id="7_ejdtj"]
+[ext_resource type="Texture2D" uid="uid://cedlkj05sbnr8" path="res://AliceSprites/LeftSprites/BackHair1.png" id="8_qojxk"]
+[ext_resource type="Texture2D" uid="uid://cmygvgiyha2q0" path="res://AliceSprites/LeftSprites/Head.png" id="9_o8xp3"]
+[ext_resource type="Texture2D" uid="uid://chee8m67eolf1" path="res://AliceSprites/LeftSprites/OpenEye1.png" id="10_p5ecp"]
+[ext_resource type="Texture2D" uid="uid://1weymvsugder" path="res://AliceSprites/LeftSprites/OpenEye.png" id="11_ffk5p"]
+[ext_resource type="Texture2D" uid="uid://dvj4uq6v26w8g" path="res://AliceSprites/LeftSprites/ClosedEye1.png" id="12_t7oh5"]
+[ext_resource type="Texture2D" uid="uid://cpvxggugk7lm2" path="res://AliceSprites/LeftSprites/ClosedEye.png" id="13_bw6gq"]
+[ext_resource type="Texture2D" uid="uid://d3y4oe0qoao4k" path="res://AliceSprites/LeftSprites/Mouth.png" id="14_qv3s4"]
+[ext_resource type="Texture2D" uid="uid://d4cehg68ivp0w" path="res://AliceSprites/LeftSprites/BaseHair.png" id="15_0yokx"]
+[ext_resource type="Texture2D" uid="uid://dgb73dgnh2rwv" path="res://AliceSprites/LeftSprites/Ahoge1.png" id="16_de28e"]
+[ext_resource type="Texture2D" uid="uid://cpj465d1dupsm" path="res://AliceSprites/LeftSprites/Ahoge.png" id="17_tj56i"]
+[ext_resource type="Texture2D" uid="uid://b3rfp5xp4m7rf" path="res://AliceSprites/LeftSprites/BackHair.png" id="18_q6oo5"]
+[ext_resource type="Texture2D" uid="uid://db4kknsu7ruyv" path="res://AliceSprites/LeftSprites/SideHair1.png" id="19_23epl"]
+[ext_resource type="Texture2D" uid="uid://djoaqcpba1mwt" path="res://AliceSprites/LeftSprites/SideHair.png" id="20_il01w"]
+[ext_resource type="Texture2D" uid="uid://d1xaj1amukwb4" path="res://AliceSprites/LeftSprites/UpperSideHair1.png" id="21_n083o"]
+[ext_resource type="Texture2D" uid="uid://byheeu0fifgys" path="res://AliceSprites/LeftSprites/UpperSideHair2.png" id="22_48xkk"]
+[ext_resource type="Texture2D" uid="uid://brb0ry140hwsy" path="res://AliceSprites/LeftSprites/UpperSideHair.png" id="23_2qiyy"]
+[ext_resource type="Texture2D" uid="uid://q0xd0gtc4dqy" path="res://AliceSprites/LeftSprites/BangHair.png" id="24_jyl24"]
+
+[node name="PlayerAnimations" type="Node2D" unique_id=1606184021]
+
+[node name="SpriteReference" type="Sprite2D" parent="." unique_id=1927522732]
+position = Vector2(-63.999985, -144)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_ovttf")
+
+[node name="LeftSprites" type="Node2D" parent="." unique_id=416898317]
+position = Vector2(-67, 0)
+
+[node name="Body" type="Node2D" parent="LeftSprites" unique_id=748829801]
+
+[node name="Legging" type="Sprite2D" parent="LeftSprites/Body" unique_id=31976884]
+position = Vector2(3, -6)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fne60")
+
+[node name="Legging2" type="Sprite2D" parent="LeftSprites/Body" unique_id=1774638154]
+position = Vector2(-7, -6)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fne60")
+
+[node name="Arm1" type="Sprite2D" parent="LeftSprites/Body" unique_id=451294363]
+position = Vector2(10, -28)
+scale = Vector2(2, 2)
+texture = ExtResource("3_41lh5")
+
+[node name="Gauntlet1" type="Sprite2D" parent="LeftSprites/Body/Arm1" unique_id=744066453]
+position = Vector2(-1, 6.5)
+texture = ExtResource("4_rkgpt")
+
+[node name="Chestplate" type="Sprite2D" parent="LeftSprites/Body" unique_id=687023546]
+position = Vector2(-3, -22)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jx5k2")
+
+[node name="Arm" type="Sprite2D" parent="LeftSprites/Body" unique_id=846573290]
+position = Vector2(-16, -30)
+scale = Vector2(2, 2)
+texture = ExtResource("6_ub1f2")
+
+[node name="Gauntlet" type="Sprite2D" parent="LeftSprites/Body/Arm" unique_id=1355128386]
+position = Vector2(0, 7.5)
+texture = ExtResource("7_ejdtj")
+
+[node name="Head" type="Node2D" parent="LeftSprites" unique_id=404324860]
+
+[node name="BackHair1" type="Sprite2D" parent="LeftSprites/Head" unique_id=659143647]
+z_index = -1
+position = Vector2(-6, -40)
+scale = Vector2(2, 2)
+texture = ExtResource("8_qojxk")
+
+[node name="HeadBase" type="Sprite2D" parent="LeftSprites/Head" unique_id=9906095]
+position = Vector2(-3, -53)
+scale = Vector2(2, 2)
+texture = ExtResource("9_o8xp3")
+
+[node name="OpenEye1" type="Sprite2D" parent="LeftSprites/Head/HeadBase" unique_id=74890440]
+position = Vector2(6, 1.5)
+texture = ExtResource("10_p5ecp")
+
+[node name="OpenEye" type="Sprite2D" parent="LeftSprites/Head/HeadBase" unique_id=573319598]
+position = Vector2(-2, 1.5)
+texture = ExtResource("11_ffk5p")
+
+[node name="ClosedEye1" type="Sprite2D" parent="LeftSprites/Head/HeadBase" unique_id=2086752219]
+visible = false
+position = Vector2(5.5, 2)
+texture = ExtResource("12_t7oh5")
+
+[node name="ClosedEye" type="Sprite2D" parent="LeftSprites/Head/HeadBase" unique_id=1122709153]
+visible = false
+position = Vector2(-1.5, 2)
+texture = ExtResource("13_bw6gq")
+
+[node name="Mouth" type="Sprite2D" parent="LeftSprites/Head/HeadBase" unique_id=1491280180]
+position = Vector2(1.5, 7)
+texture = ExtResource("14_qv3s4")
+
+[node name="BaseHair" type="Sprite2D" parent="LeftSprites/Head" unique_id=453132955]
+position = Vector2(-3, -63)
+scale = Vector2(2, 2)
+texture = ExtResource("15_0yokx")
+
+[node name="Ahoge1" type="Sprite2D" parent="LeftSprites/Head" unique_id=1654855768]
+position = Vector2(-22, -72)
+scale = Vector2(2, 2)
+texture = ExtResource("16_de28e")
+
+[node name="Ahoge" type="Sprite2D" parent="LeftSprites/Head" unique_id=108827641]
+position = Vector2(-14, -78)
+scale = Vector2(2, 2)
+texture = ExtResource("17_tj56i")
+
+[node name="BackHair" type="Sprite2D" parent="LeftSprites/Head" unique_id=1244972442]
+z_index = -1
+position = Vector2(-27, -41)
+scale = Vector2(2, 2)
+texture = ExtResource("18_q6oo5")
+
+[node name="SideHair1" type="Sprite2D" parent="LeftSprites/Head" unique_id=576037722]
+position = Vector2(12, -39)
+scale = Vector2(2, 2)
+texture = ExtResource("19_23epl")
+
+[node name="SideHair" type="Sprite2D" parent="LeftSprites/Head" unique_id=65057857]
+position = Vector2(-13, -43)
+scale = Vector2(2, 2)
+texture = ExtResource("20_il01w")
+
+[node name="UpperSideHair1" type="Sprite2D" parent="LeftSprites/Head" unique_id=491751544]
+position = Vector2(16, -44)
+scale = Vector2(2, 2)
+texture = ExtResource("21_n083o")
+
+[node name="UpperSideHair2" type="Sprite2D" parent="LeftSprites/Head" unique_id=758357267]
+position = Vector2(-16, -55)
+scale = Vector2(2, 2)
+texture = ExtResource("22_48xkk")
+
+[node name="UpperSideHair" type="Sprite2D" parent="LeftSprites/Head" unique_id=879741299]
+position = Vector2(17, -58)
+scale = Vector2(2, 2)
+texture = ExtResource("23_2qiyy")
+
+[node name="BangHair" type="Sprite2D" parent="LeftSprites/Head" unique_id=608361370]
+position = Vector2(4, -60)
+scale = Vector2(2, 2)
+texture = ExtResource("24_jyl24")
+
+[node name="RightSprites" type="Node2D" parent="." unique_id=2019148688]
+
+[node name="Arm1" type="Sprite2D" parent="RightSprites" unique_id=1943139542]
+position = Vector2(-10, -28)
+scale = Vector2(2, 2)
+texture = ExtResource("3_41lh5")
+flip_h = true
+
+[node name="Gauntlet1" type="Sprite2D" parent="RightSprites/Arm1" unique_id=2058714396]
+position = Vector2(1, 6.5)
+texture = ExtResource("4_rkgpt")
+flip_h = true
+
+[node name="Legging" type="Sprite2D" parent="RightSprites" unique_id=398857868]
+position = Vector2(7, -6)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fne60")
+flip_h = true
+
+[node name="Legging2" type="Sprite2D" parent="RightSprites" unique_id=1272481326]
+position = Vector2(-3, -6)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fne60")
+flip_h = true
+
+[node name="Chestplate" type="Sprite2D" parent="RightSprites" unique_id=1780975982]
+position = Vector2(3, -22)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jx5k2")
+flip_h = true
+
+[node name="Arm" type="Sprite2D" parent="RightSprites" unique_id=262495082]
+position = Vector2(16, -30)
+scale = Vector2(2, 2)
+texture = ExtResource("6_ub1f2")
+flip_h = true
+
+[node name="Gauntlet" type="Sprite2D" parent="RightSprites/Arm" unique_id=1568077846]
+position = Vector2(0, 7.5)
+texture = ExtResource("7_ejdtj")
+flip_h = true
+
+[node name="Head" type="Sprite2D" parent="RightSprites" unique_id=213251393]
+position = Vector2(3, -53)
+scale = Vector2(2, 2)
+texture = ExtResource("9_o8xp3")
+flip_h = true
+
+[node name="OpenEye1" type="Sprite2D" parent="RightSprites/Head" unique_id=2031924379]
+position = Vector2(-6, 1.5)
+texture = ExtResource("10_p5ecp")
+flip_h = true
+
+[node name="OpenEye" type="Sprite2D" parent="RightSprites/Head" unique_id=1347718009]
+position = Vector2(2, 1.5)
+texture = ExtResource("11_ffk5p")
+flip_h = true
+
+[node name="Mouth" type="Sprite2D" parent="RightSprites/Head" unique_id=2052710198]
+position = Vector2(-1.5, 7)
+texture = ExtResource("14_qv3s4")
+flip_h = true
+
+[node name="ClosedEye1" type="Sprite2D" parent="RightSprites/Head" unique_id=457499286]
+visible = false
+position = Vector2(-5.5, 2)
+texture = ExtResource("12_t7oh5")
+flip_h = true
+
+[node name="ClosedEye" type="Sprite2D" parent="RightSprites/Head" unique_id=1055453104]
+visible = false
+position = Vector2(1.5, 2)
+texture = ExtResource("13_bw6gq")
+flip_h = true
+
+[node name="BaseHair" type="Sprite2D" parent="RightSprites" unique_id=1967616880]
+position = Vector2(3, -63)
+scale = Vector2(2, 2)
+texture = ExtResource("15_0yokx")
+flip_h = true
+
+[node name="Ahoge1" type="Sprite2D" parent="RightSprites" unique_id=393113885]
+position = Vector2(22, -72)
+scale = Vector2(2, 2)
+texture = ExtResource("16_de28e")
+flip_h = true
+
+[node name="Ahoge" type="Sprite2D" parent="RightSprites" unique_id=355761482]
+position = Vector2(14, -78)
+scale = Vector2(2, 2)
+texture = ExtResource("17_tj56i")
+flip_h = true
+
+[node name="BackHair1" type="Sprite2D" parent="RightSprites" unique_id=1709836309]
+z_index = -1
+position = Vector2(6, -40)
+scale = Vector2(2, 2)
+texture = ExtResource("8_qojxk")
+flip_h = true
+
+[node name="BackHair" type="Sprite2D" parent="RightSprites" unique_id=179951720]
+z_index = -1
+position = Vector2(27, -41)
+scale = Vector2(2, 2)
+texture = ExtResource("18_q6oo5")
+flip_h = true
+
+[node name="SideHair" type="Sprite2D" parent="RightSprites" unique_id=2117166047]
+position = Vector2(13, -43)
+scale = Vector2(2, 2)
+texture = ExtResource("20_il01w")
+flip_h = true
+
+[node name="SideHair1" type="Sprite2D" parent="RightSprites" unique_id=1939651529]
+position = Vector2(-12, -39)
+scale = Vector2(2, 2)
+texture = ExtResource("19_23epl")
+flip_h = true
+
+[node name="UpperSideHair" type="Sprite2D" parent="RightSprites" unique_id=1284589316]
+position = Vector2(-17, -58)
+scale = Vector2(2, 2)
+texture = ExtResource("23_2qiyy")
+flip_h = true
+
+[node name="UpperSideHair2" type="Sprite2D" parent="RightSprites" unique_id=1464931729]
+position = Vector2(16, -55)
+scale = Vector2(2, 2)
+texture = ExtResource("22_48xkk")
+flip_h = true
+
+[node name="UpperSideHair1" type="Sprite2D" parent="RightSprites" unique_id=19627294]
+position = Vector2(-18, -44)
+scale = Vector2(2, 2)
+texture = ExtResource("21_n083o")
+flip_h = true
+
+[node name="BangHair" type="Sprite2D" parent="RightSprites" unique_id=241724373]
+position = Vector2(-4, -60)
+scale = Vector2(2, 2)
+texture = ExtResource("24_jyl24")
+flip_h = true
+
+[node name="UpSprites" type="Node2D" parent="." unique_id=1533558840]
+
+[node name="DownSprites" type="Node2D" parent="." unique_id=747455519]
