@@ -9,9 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://x30u7j3y40fa" path="res://AliceSprites/LeftSprites/Gauntlet.png" id="7_ejdtj"]
 [ext_resource type="Texture2D" uid="uid://cedlkj05sbnr8" path="res://AliceSprites/LeftSprites/BackHair1.png" id="8_qojxk"]
 [ext_resource type="Texture2D" uid="uid://cmygvgiyha2q0" path="res://AliceSprites/LeftSprites/Head.png" id="9_o8xp3"]
+[ext_resource type="Texture2D" uid="uid://cp8qmpa1p0hfo" path="res://WeaponSprites/Spears/SilverSpear.png" id="10_57xl7"]
 [ext_resource type="Texture2D" uid="uid://chee8m67eolf1" path="res://AliceSprites/LeftSprites/OpenEye1.png" id="10_p5ecp"]
 [ext_resource type="Texture2D" uid="uid://1weymvsugder" path="res://AliceSprites/LeftSprites/OpenEye.png" id="11_ffk5p"]
+[ext_resource type="Texture2D" uid="uid://6oy1k6254aov" path="res://WeaponSprites/LongSwords/SilverSword.png" id="11_iq40q"]
 [ext_resource type="Texture2D" uid="uid://dvj4uq6v26w8g" path="res://AliceSprites/LeftSprites/ClosedEye1.png" id="12_t7oh5"]
+[ext_resource type="Texture2D" uid="uid://c85alk0gfqyh4" path="res://WeaponSprites/GreatSwords/SilverGreatSword.png" id="12_vl30n"]
 [ext_resource type="Texture2D" uid="uid://cpvxggugk7lm2" path="res://AliceSprites/LeftSprites/ClosedEye.png" id="13_bw6gq"]
 [ext_resource type="Texture2D" uid="uid://d3y4oe0qoao4k" path="res://AliceSprites/LeftSprites/Mouth.png" id="14_qv3s4"]
 [ext_resource type="Texture2D" uid="uid://d4cehg68ivp0w" path="res://AliceSprites/LeftSprites/BaseHair.png" id="15_0yokx"]
@@ -48,809 +51,28 @@
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vl30n"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_48xkk"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nxfn5"]
 states/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_vl30n")
 states/BlendSpace2D/position = Vector2(407.4, 111.28)
-states/Start/position = Vector2(160.8, 111.2)
+states/Start/position = Vector2(130.40001, 111.264)
+transitions = ["Start", "BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_48xkk")]
 graph_offset = Vector2(51, 23)
+
+[sub_resource type="Animation" id="Animation_2qiyy"]
+
+[sub_resource type="Animation" id="Animation_57xl7"]
+
+[sub_resource type="Animation" id="Animation_brfpe"]
+
+[sub_resource type="Animation" id="Animation_uid8n"]
 
 [sub_resource type="Animation" id="Animation_jyl24"]
 resource_name = "SwordIdleDown"
 
-[sub_resource type="Animation" id="Animation_57xl7"]
-resource_name = "SwordIdleLeft"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LeftSprites:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LeftSprites/Body:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LeftSprites/Legging:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3, -6)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("LeftSprites/Legging2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-7, -6)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("LeftSprites/Body/Arm1:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(9, -28)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("LeftSprites/Body/Chestplate:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -22)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("LeftSprites/Body/Arm:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-16, -30)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("LeftSprites/Body/Arm/Gauntlet:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 7)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("LeftSprites/Head:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("LeftSprites/BackHair1:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-6, -40)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("LeftSprites/Head/HeadBase:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -53)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("LeftSprites/Head/BaseHair:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -63)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("LeftSprites/Head/Ahoge1:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-22, -72)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("LeftSprites/Head/Ahoge:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-14, -78)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("LeftSprites/BackHair:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-27, -41)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("LeftSprites/Head/SideHair1:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(12, -39)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("LeftSprites/Head/SideHair:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-13, -43)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("LeftSprites/Head/UpperSideHair1:position")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(16, -44)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("LeftSprites/Head/UpperSideHair2:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-16, -55)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("LeftSprites/Head/UpperSideHair:position")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(17, -58)]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("LeftSprites/Head/BangHair:position")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(4, -60)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("LeftSprites/Body/Arm1/Gauntlet1:position")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-0.5, 6.5)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("LeftSprites:rotation")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("LeftSprites/Body:rotation")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("LeftSprites/Legging:rotation")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("LeftSprites/Legging2:rotation")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("LeftSprites/Body/Arm1:rotation")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("LeftSprites/Body/Arm1/Gauntlet1:rotation")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("LeftSprites/Body/Chestplate:rotation")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/29/type = "value"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("LeftSprites/Body/Arm:rotation")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/30/type = "value"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("LeftSprites/Body/Arm/Gauntlet:rotation")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/31/type = "value"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("LeftSprites/Head:rotation")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/32/type = "value"
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/path = NodePath("LeftSprites/BackHair1:rotation")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/33/type = "value"
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/path = NodePath("LeftSprites/Head/SideHair1:rotation")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/34/type = "value"
-tracks/34/imported = false
-tracks/34/enabled = true
-tracks/34/path = NodePath("LeftSprites/Head/HeadBase:rotation")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/35/type = "value"
-tracks/35/imported = false
-tracks/35/enabled = true
-tracks/35/path = NodePath("LeftSprites/Head/BaseHair:rotation")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/36/type = "value"
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/path = NodePath("LeftSprites/Head/Ahoge1:rotation")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/37/type = "value"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("LeftSprites/Head/Ahoge:rotation")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("LeftSprites/BackHair:rotation")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("LeftSprites/Head/SideHair:rotation")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("LeftSprites/Head/UpperSideHair1:rotation")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/41/type = "value"
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/path = NodePath("LeftSprites/Head/UpperSideHair2:rotation")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/42/type = "value"
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/path = NodePath("LeftSprites/Head/UpperSideHair:rotation")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/43/type = "value"
-tracks/43/imported = false
-tracks/43/enabled = true
-tracks/43/path = NodePath("LeftSprites/Head/BangHair:rotation")
-tracks/43/interp = 1
-tracks/43/loop_wrap = true
-tracks/43/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/44/type = "value"
-tracks/44/imported = false
-tracks/44/enabled = true
-tracks/44/path = NodePath("LeftSprites:scale")
-tracks/44/interp = 1
-tracks/44/loop_wrap = true
-tracks/44/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/45/type = "value"
-tracks/45/imported = false
-tracks/45/enabled = true
-tracks/45/path = NodePath("LeftSprites/Body:scale")
-tracks/45/interp = 1
-tracks/45/loop_wrap = true
-tracks/45/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/46/type = "value"
-tracks/46/imported = false
-tracks/46/enabled = true
-tracks/46/path = NodePath("LeftSprites/Legging:scale")
-tracks/46/interp = 1
-tracks/46/loop_wrap = true
-tracks/46/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/47/type = "value"
-tracks/47/imported = false
-tracks/47/enabled = true
-tracks/47/path = NodePath("LeftSprites/Legging2:scale")
-tracks/47/interp = 1
-tracks/47/loop_wrap = true
-tracks/47/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/48/type = "value"
-tracks/48/imported = false
-tracks/48/enabled = true
-tracks/48/path = NodePath("LeftSprites/Body/Arm1:scale")
-tracks/48/interp = 1
-tracks/48/loop_wrap = true
-tracks/48/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/49/type = "value"
-tracks/49/imported = false
-tracks/49/enabled = true
-tracks/49/path = NodePath("LeftSprites/Body/Arm1/Gauntlet1:scale")
-tracks/49/interp = 1
-tracks/49/loop_wrap = true
-tracks/49/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/50/type = "value"
-tracks/50/imported = false
-tracks/50/enabled = true
-tracks/50/path = NodePath("LeftSprites/Body/Chestplate:scale")
-tracks/50/interp = 1
-tracks/50/loop_wrap = true
-tracks/50/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/51/type = "value"
-tracks/51/imported = false
-tracks/51/enabled = true
-tracks/51/path = NodePath("LeftSprites/Body/Arm:scale")
-tracks/51/interp = 1
-tracks/51/loop_wrap = true
-tracks/51/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/52/type = "value"
-tracks/52/imported = false
-tracks/52/enabled = true
-tracks/52/path = NodePath("LeftSprites/Body/Arm/Gauntlet:scale")
-tracks/52/interp = 1
-tracks/52/loop_wrap = true
-tracks/52/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/53/type = "value"
-tracks/53/imported = false
-tracks/53/enabled = true
-tracks/53/path = NodePath("LeftSprites/Head:scale")
-tracks/53/interp = 1
-tracks/53/loop_wrap = true
-tracks/53/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/54/type = "value"
-tracks/54/imported = false
-tracks/54/enabled = true
-tracks/54/path = NodePath("LeftSprites/BackHair1:scale")
-tracks/54/interp = 1
-tracks/54/loop_wrap = true
-tracks/54/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/55/type = "value"
-tracks/55/imported = false
-tracks/55/enabled = true
-tracks/55/path = NodePath("LeftSprites/Head/SideHair1:scale")
-tracks/55/interp = 1
-tracks/55/loop_wrap = true
-tracks/55/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/56/type = "value"
-tracks/56/imported = false
-tracks/56/enabled = true
-tracks/56/path = NodePath("LeftSprites/Head/HeadBase:scale")
-tracks/56/interp = 1
-tracks/56/loop_wrap = true
-tracks/56/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/57/type = "value"
-tracks/57/imported = false
-tracks/57/enabled = true
-tracks/57/path = NodePath("LeftSprites/Head/BaseHair:scale")
-tracks/57/interp = 1
-tracks/57/loop_wrap = true
-tracks/57/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/58/type = "value"
-tracks/58/imported = false
-tracks/58/enabled = true
-tracks/58/path = NodePath("LeftSprites/Head/Ahoge1:scale")
-tracks/58/interp = 1
-tracks/58/loop_wrap = true
-tracks/58/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/59/type = "value"
-tracks/59/imported = false
-tracks/59/enabled = true
-tracks/59/path = NodePath("LeftSprites/Head/Ahoge:scale")
-tracks/59/interp = 1
-tracks/59/loop_wrap = true
-tracks/59/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/60/type = "value"
-tracks/60/imported = false
-tracks/60/enabled = true
-tracks/60/path = NodePath("LeftSprites/BackHair:scale")
-tracks/60/interp = 1
-tracks/60/loop_wrap = true
-tracks/60/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/61/type = "value"
-tracks/61/imported = false
-tracks/61/enabled = true
-tracks/61/path = NodePath("LeftSprites/Head/SideHair:scale")
-tracks/61/interp = 1
-tracks/61/loop_wrap = true
-tracks/61/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/62/type = "value"
-tracks/62/imported = false
-tracks/62/enabled = true
-tracks/62/path = NodePath("LeftSprites/Head/UpperSideHair1:scale")
-tracks/62/interp = 1
-tracks/62/loop_wrap = true
-tracks/62/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/63/type = "value"
-tracks/63/imported = false
-tracks/63/enabled = true
-tracks/63/path = NodePath("LeftSprites/Head/UpperSideHair2:scale")
-tracks/63/interp = 1
-tracks/63/loop_wrap = true
-tracks/63/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/64/type = "value"
-tracks/64/imported = false
-tracks/64/enabled = true
-tracks/64/path = NodePath("LeftSprites/Head/UpperSideHair:scale")
-tracks/64/interp = 1
-tracks/64/loop_wrap = true
-tracks/64/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/65/type = "value"
-tracks/65/imported = false
-tracks/65/enabled = true
-tracks/65/path = NodePath("LeftSprites/Head/BangHair:scale")
-tracks/65/interp = 1
-tracks/65/loop_wrap = true
-tracks/65/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
+[sub_resource type="Animation" id="Animation_oenyh"]
 
 [sub_resource type="Animation" id="Animation_iq40q"]
 resource_name = "SwordIdleRight"
@@ -872,8 +94,12 @@ resource_name = "SwordSprintUp"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_brfpe"]
 _data = {
+&"SpearIdleDown": SubResource("Animation_2qiyy"),
+&"SpearIdleLeft": SubResource("Animation_57xl7"),
+&"SpearIdleRight": SubResource("Animation_brfpe"),
+&"SpearIdleUp": SubResource("Animation_uid8n"),
 &"SwordIdleDown": SubResource("Animation_jyl24"),
-&"SwordIdleLeft": SubResource("Animation_57xl7"),
+&"SwordIdleLeft": SubResource("Animation_oenyh"),
 &"SwordIdleRight": SubResource("Animation_iq40q"),
 &"SwordIdleUp": SubResource("Animation_vl30n"),
 &"SwordSprintDown": SubResource("Animation_nxfn5"),
@@ -886,32 +112,30 @@ _data = {
 script = ExtResource("1_jyl24")
 
 [node name="LeftSprites" type="Node2D" parent="." unique_id=416898317]
-visible = false
 scale = Vector2(8, 8)
 
 [node name="BackHair1" type="Sprite2D" parent="LeftSprites" unique_id=659143647]
 z_index = -1
-position = Vector2(-2, -21.5)
+position = Vector2(-2.5, -21)
 texture = ExtResource("8_qojxk")
 
 [node name="BackHair" type="Sprite2D" parent="LeftSprites" unique_id=1244972442]
 z_index = -1
-position = Vector2(-12.5, -22)
+position = Vector2(-12, -21.5)
 texture = ExtResource("18_q6oo5")
 
 [node name="Legging" type="Sprite2D" parent="LeftSprites" unique_id=31976884]
-position = Vector2(2.5, -3)
+position = Vector2(3, -3)
 texture = ExtResource("2_fne60")
 
 [node name="Legging2" type="Sprite2D" parent="LeftSprites" unique_id=1774638154]
-position = Vector2(-3.5, -3)
+position = Vector2(-3, -3)
 texture = ExtResource("2_fne60")
 
 [node name="Body" type="Node2D" parent="LeftSprites" unique_id=748829801]
-position = Vector2(1, -1)
 
 [node name="Arm1" type="Sprite2D" parent="LeftSprites/Body" unique_id=451294363]
-position = Vector2(4.5, -14)
+position = Vector2(6, -15)
 texture = ExtResource("3_41lh5")
 
 [node name="Gauntlet1" type="Sprite2D" parent="LeftSprites/Body/Arm1" unique_id=744066453]
@@ -919,26 +143,40 @@ position = Vector2(-0.5, 6.5)
 texture = ExtResource("4_rkgpt")
 
 [node name="Chestplate" type="Sprite2D" parent="LeftSprites/Body" unique_id=687023546]
-position = Vector2(-1.5, -11)
+position = Vector2(0, -12)
 texture = ExtResource("5_jx5k2")
 
 [node name="Arm" type="Sprite2D" parent="LeftSprites/Body" unique_id=846573290]
-position = Vector2(-8, -14.5)
+position = Vector2(-6.5, -15.5)
 texture = ExtResource("6_ub1f2")
 
 [node name="Gauntlet" type="Sprite2D" parent="LeftSprites/Body/Arm" unique_id=1355128386]
 position = Vector2(0, 7)
 texture = ExtResource("7_ejdtj")
 
+[node name="SilverSpear" type="Sprite2D" parent="LeftSprites/Body/Arm/Gauntlet" unique_id=1433430567]
+visible = false
+z_index = -1
+texture = ExtResource("10_57xl7")
+
+[node name="SilverSword" type="Sprite2D" parent="LeftSprites/Body/Arm/Gauntlet" unique_id=1230502555]
+visible = false
+position = Vector2(45.25, 3.5)
+texture = ExtResource("11_iq40q")
+
+[node name="SilverGreatSword" type="Sprite2D" parent="LeftSprites/Body/Arm/Gauntlet" unique_id=510607668]
+visible = false
+position = Vector2(63.375, 1.5)
+texture = ExtResource("12_vl30n")
+
 [node name="Head" type="Node2D" parent="LeftSprites" unique_id=404324860]
-position = Vector2(1, -1)
 
 [node name="SideHair1" type="Sprite2D" parent="LeftSprites/Head" unique_id=576037722]
-position = Vector2(6, -18.5)
+position = Vector2(7.5, -19.5)
 texture = ExtResource("19_23epl")
 
 [node name="HeadBase" type="Sprite2D" parent="LeftSprites/Head" unique_id=9906095]
-position = Vector2(-1.5, -26.5)
+position = Vector2(0, -27.5)
 texture = ExtResource("9_o8xp3")
 
 [node name="OpenEye1" type="Sprite2D" parent="LeftSprites/Head/HeadBase" unique_id=74890440]
@@ -964,39 +202,40 @@ position = Vector2(1.5, 7)
 texture = ExtResource("14_qv3s4")
 
 [node name="BaseHair" type="Sprite2D" parent="LeftSprites/Head" unique_id=453132955]
-position = Vector2(-1.5, -31.5)
+position = Vector2(0, -32.5)
 texture = ExtResource("15_0yokx")
 
 [node name="Ahoge1" type="Sprite2D" parent="LeftSprites/Head" unique_id=1654855768]
-position = Vector2(-11, -36)
+position = Vector2(-9.5, -37)
 texture = ExtResource("16_de28e")
 
 [node name="Ahoge" type="Sprite2D" parent="LeftSprites/Head" unique_id=108827641]
-position = Vector2(-7, -39)
+position = Vector2(-5.5, -40)
 texture = ExtResource("17_tj56i")
 
 [node name="SideHair" type="Sprite2D" parent="LeftSprites/Head" unique_id=65057857]
-position = Vector2(-7.5, -20.5)
+position = Vector2(-6, -21.5)
 texture = ExtResource("20_il01w")
 
 [node name="UpperSideHair1" type="Sprite2D" parent="LeftSprites/Head" unique_id=491751544]
-position = Vector2(8, -22)
+position = Vector2(9.5, -23)
 texture = ExtResource("21_n083o")
 
 [node name="UpperSideHair2" type="Sprite2D" parent="LeftSprites/Head" unique_id=758357267]
-position = Vector2(-8, -27.5)
+position = Vector2(-6.5, -28.5)
 texture = ExtResource("22_48xkk")
 
 [node name="UpperSideHair" type="Sprite2D" parent="LeftSprites/Head" unique_id=879741299]
-position = Vector2(8.5, -29)
+position = Vector2(10, -30)
 texture = ExtResource("23_2qiyy")
 
 [node name="BangHair" type="Sprite2D" parent="LeftSprites/Head" unique_id=608361370]
-position = Vector2(2, -30)
+position = Vector2(3.5, -31)
 texture = ExtResource("24_jyl24")
 
 [node name="RightSprites" type="Node2D" parent="." unique_id=2019148688]
 visible = false
+position = Vector2(-24, 0)
 scale = Vector2(8, 8)
 
 [node name="BackHair1" type="Sprite2D" parent="RightSprites" unique_id=1709836309]
@@ -1165,6 +404,7 @@ position = Vector2(0.5, -42)
 texture = ExtResource("29_57xl7")
 
 [node name="DownSprites" type="Node2D" parent="." unique_id=747455519]
+visible = false
 scale = Vector2(8, 8)
 
 [node name="BackHair" type="Sprite2D" parent="DownSprites" unique_id=1787771952]
@@ -1268,13 +508,16 @@ position = Vector2(0.5, -30)
 texture = ExtResource("44_wmvor")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1975829203]
+active = false
 deterministic = false
 tree_root = SubResource("AnimationNodeStateMachine_nxfn5")
-anim_player = NodePath("../AnimationPlayer")
+anim_player = NodePath("../BodyAnimationPlayer")
 parameters/BlendSpace2D/blend_position = Vector2(0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=166096817]
+[node name="BodyAnimationPlayer" type="AnimationPlayer" parent="." unique_id=166096817]
 libraries/ = SubResource("AnimationLibrary_brfpe")
+
+[node name="LegAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1061285523]
 
 [node name="SpriteReference" type="Sprite2D" parent="." unique_id=1389674896]
 position = Vector2(862, -334)
