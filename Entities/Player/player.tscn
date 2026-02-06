@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8vcq8scjtsnl" path="res://Project Purgatory/Entities/Player/player.gd" id="1_mq36u"]
 [ext_resource type="Texture2D" uid="uid://cedlkj05sbnr8" path="res://AliceSprites/LeftSprites/BackHair1.png" id="2_3t7an"]
+[ext_resource type="Script" uid="uid://cvylcqodwwt0" path="res://Project Purgatory/Entities/Player/player_animation.gd" id="2_cyx4s"]
 [ext_resource type="Texture2D" uid="uid://b3rfp5xp4m7rf" path="res://AliceSprites/LeftSprites/BackHair.png" id="3_cyx4s"]
 [ext_resource type="Texture2D" uid="uid://bja1b7jxu1ihm" path="res://AliceSprites/LeftSprites/Legging.png" id="4_phah1"]
 [ext_resource type="Texture2D" uid="uid://dxf2raybft5s7" path="res://AliceSprites/LeftSprites/Arm1.png" id="5_7lubx"]
@@ -49,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://cwtub0jg6p4xs" path="res://AliceSprites/FrontSprites/BangHair.png" id="47_hwghf"]
 [ext_resource type="AnimationLibrary" uid="uid://c7wuk2cifyxmk" path="res://Project Purgatory/Animations/PlayerAnimations/PlayerHeadAnimations.res" id="48_32u6f"]
 [ext_resource type="AnimationLibrary" uid="uid://bbof4hokgtp13" path="res://Project Purgatory/Animations/PlayerAnimations/PlayerBodyAnimations.res" id="49_oqnu7"]
+[ext_resource type="Animation" uid="uid://cvxx3r86rpm7o" path="res://Project Purgatory/Animations/PlayerAnimations/Blink.res" id="50_phah1"]
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vl30n"]
 
@@ -62,6 +64,63 @@ states/Start/position = Vector2(130.40001, 111.264)
 transitions = ["Start", "BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_48xkk")]
 graph_offset = Vector2(10, 46)
 
+[sub_resource type="Animation" id="Animation_mq36u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimation/RightSprites/Body/Head/HeadBase/OpenEye1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimation/RightSprites/Body/Head/HeadBase/OpenEye:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnimation/RightSprites/Body/Head/HeadBase/ClosedEye1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerAnimation/RightSprites/Body/Head/HeadBase/ClosedEye:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3t7an"]
+_data = {
+&"Blink": ExtResource("50_phah1"),
+&"RESET": SubResource("Animation_mq36u")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cwxkd"]
 radius = 54.0
 height = 202.0
@@ -69,405 +128,405 @@ height = 202.0
 [node name="Player" type="CharacterBody2D" unique_id=638193847]
 script = ExtResource("1_mq36u")
 
-[node name="Animation" type="Node" parent="." unique_id=1089282560]
+[node name="PlayerAnimation" type="Node" parent="." unique_id=1089282560]
+script = ExtResource("2_cyx4s")
 
-[node name="RightSprites" type="Node2D" parent="Animation" unique_id=416898317]
+[node name="RightSprites" type="Node2D" parent="PlayerAnimation" unique_id=416898317]
 scale = Vector2(8, 8)
 
-[node name="Legging" type="Sprite2D" parent="Animation/RightSprites" unique_id=31976884]
+[node name="Legging" type="Sprite2D" parent="PlayerAnimation/RightSprites" unique_id=31976884]
 modulate = Color(0.48502886, 0.48801202, 0.5029279, 1)
 position = Vector2(2.875, -3)
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("4_phah1")
 
-[node name="Legging2" type="Sprite2D" parent="Animation/RightSprites" unique_id=1774638154]
+[node name="Legging2" type="Sprite2D" parent="PlayerAnimation/RightSprites" unique_id=1774638154]
 position = Vector2(-2.625, -3)
 texture = ExtResource("4_phah1")
 
-[node name="Body" type="Node2D" parent="Animation/RightSprites" unique_id=748829801]
+[node name="Body" type="Node2D" parent="PlayerAnimation/RightSprites" unique_id=748829801]
 
-[node name="Arm1" type="Sprite2D" parent="Animation/RightSprites/Body" unique_id=451294363]
+[node name="Arm1" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body" unique_id=451294363]
 position = Vector2(6, -15)
 texture = ExtResource("5_7lubx")
 
-[node name="Gauntlet1" type="Sprite2D" parent="Animation/RightSprites/Body/Arm1" unique_id=744066453]
+[node name="Gauntlet1" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm1" unique_id=744066453]
 position = Vector2(-0.5, 6.5)
 texture = ExtResource("6_ur6fg")
 
-[node name="Chestplate" type="Sprite2D" parent="Animation/RightSprites/Body" unique_id=687023546]
+[node name="Chestplate" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body" unique_id=687023546]
 position = Vector2(0, -12)
 texture = ExtResource("7_x22oy")
 
-[node name="Arm" type="Sprite2D" parent="Animation/RightSprites/Body" unique_id=846573290]
+[node name="Arm" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body" unique_id=846573290]
 position = Vector2(-6.5, -15.5)
 texture = ExtResource("8_fmdqi")
 
-[node name="Gauntlet" type="Sprite2D" parent="Animation/RightSprites/Body/Arm" unique_id=1355128386]
+[node name="Gauntlet" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm" unique_id=1355128386]
 position = Vector2(0, 7)
 texture = ExtResource("9_6bda7")
 
-[node name="SilverSpear" type="Sprite2D" parent="Animation/RightSprites/Body/Arm/Gauntlet" unique_id=1433430567]
+[node name="SilverSpear" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=1433430567]
 z_index = -1
 texture = ExtResource("10_1e8y2")
 
-[node name="SilverSword" type="Sprite2D" parent="Animation/RightSprites/Body/Arm/Gauntlet" unique_id=1230502555]
+[node name="SilverSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=1230502555]
 visible = false
 position = Vector2(45.25, 3.5)
 texture = ExtResource("11_e2n0g")
 
-[node name="SilverGreatSword" type="Sprite2D" parent="Animation/RightSprites/Body/Arm/Gauntlet" unique_id=510607668]
+[node name="SilverGreatSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=510607668]
 visible = false
 position = Vector2(63.375, 1.5)
 texture = ExtResource("12_ri0t7")
 
-[node name="Head" type="Node2D" parent="Animation/RightSprites/Body" unique_id=404324860]
+[node name="Head" type="Node2D" parent="PlayerAnimation/RightSprites/Body" unique_id=404324860]
 
-[node name="BackHair1" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=659143647]
+[node name="BackHair1" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=659143647]
 z_index = -1
 position = Vector2(-2.5, -21)
 texture = ExtResource("2_3t7an")
 
-[node name="BackHair" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=1244972442]
+[node name="BackHair" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=1244972442]
 z_index = -1
 position = Vector2(-12, -21.5)
 texture = ExtResource("3_cyx4s")
 
-[node name="SideHair1" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=576037722]
+[node name="SideHair1" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=576037722]
 position = Vector2(7.5, -19.5)
 texture = ExtResource("13_o50rk")
 
-[node name="HeadBase" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=9906095]
+[node name="HeadBase" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=9906095]
 position = Vector2(0, -27.5)
 texture = ExtResource("14_wyv4u")
 
-[node name="OpenEye1" type="Sprite2D" parent="Animation/RightSprites/Body/Head/HeadBase" unique_id=74890440]
+[node name="OpenEye1" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head/HeadBase" unique_id=74890440]
 position = Vector2(6, 1.5)
 texture = ExtResource("15_44nwt")
 
-[node name="OpenEye" type="Sprite2D" parent="Animation/RightSprites/Body/Head/HeadBase" unique_id=573319598]
+[node name="OpenEye" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head/HeadBase" unique_id=573319598]
 position = Vector2(-2, 1.5)
 texture = ExtResource("16_86plw")
 
-[node name="ClosedEye1" type="Sprite2D" parent="Animation/RightSprites/Body/Head/HeadBase" unique_id=2086752219]
+[node name="ClosedEye1" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head/HeadBase" unique_id=2086752219]
 visible = false
 position = Vector2(5.5, 2)
 texture = ExtResource("17_xe4ap")
 
-[node name="ClosedEye" type="Sprite2D" parent="Animation/RightSprites/Body/Head/HeadBase" unique_id=1122709153]
+[node name="ClosedEye" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head/HeadBase" unique_id=1122709153]
 visible = false
 position = Vector2(-1.5, 2)
 texture = ExtResource("18_itjtq")
 
-[node name="Mouth" type="Sprite2D" parent="Animation/RightSprites/Body/Head/HeadBase" unique_id=1491280180]
+[node name="Mouth" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head/HeadBase" unique_id=1491280180]
 position = Vector2(1.5, 7)
 texture = ExtResource("19_ag1xb")
 
-[node name="BaseHair" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=453132955]
+[node name="BaseHair" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=453132955]
 position = Vector2(0, -32.5)
 texture = ExtResource("20_nlbhx")
 
-[node name="Ahoge1" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=1654855768]
+[node name="Ahoge1" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=1654855768]
 position = Vector2(-9.5, -37)
 texture = ExtResource("21_iu54k")
 
-[node name="Ahoge" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=108827641]
+[node name="Ahoge" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=108827641]
 position = Vector2(-5.5, -40)
 texture = ExtResource("22_g0sd6")
 
-[node name="SideHair" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=65057857]
+[node name="SideHair" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=65057857]
 position = Vector2(-6, -21.5)
 texture = ExtResource("23_nbmts")
 
-[node name="UpperSideHair1" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=491751544]
+[node name="UpperSideHair1" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=491751544]
 position = Vector2(9.5, -23)
 texture = ExtResource("24_h7k4v")
 
-[node name="UpperSideHair2" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=758357267]
+[node name="UpperSideHair2" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=758357267]
 position = Vector2(-6.5, -28.5)
 texture = ExtResource("25_sb1uu")
 
-[node name="UpperSideHair" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=879741299]
+[node name="UpperSideHair" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=879741299]
 position = Vector2(10, -30)
 texture = ExtResource("26_t4ln1")
 
-[node name="BangHair" type="Sprite2D" parent="Animation/RightSprites/Body/Head" unique_id=608361370]
+[node name="BangHair" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=608361370]
 position = Vector2(3.5, -31)
 texture = ExtResource("27_jsp28")
 
-[node name="LeftSprites" type="Node2D" parent="Animation" unique_id=2019148688]
+[node name="LeftSprites" type="Node2D" parent="PlayerAnimation" unique_id=2019148688]
 visible = false
 position = Vector2(-24, 0)
 scale = Vector2(8, 8)
 
-[node name="BackHair1" type="Sprite2D" parent="Animation/LeftSprites" unique_id=1709836309]
+[node name="BackHair1" type="Sprite2D" parent="PlayerAnimation/LeftSprites" unique_id=1709836309]
 z_index = -1
 position = Vector2(5.5, -21.625)
 texture = ExtResource("2_3t7an")
 flip_h = true
 
-[node name="BackHair" type="Sprite2D" parent="Animation/LeftSprites" unique_id=179951720]
+[node name="BackHair" type="Sprite2D" parent="PlayerAnimation/LeftSprites" unique_id=179951720]
 position = Vector2(15, -21.5)
 texture = ExtResource("3_cyx4s")
 flip_h = true
 
-[node name="Legging" type="Sprite2D" parent="Animation/LeftSprites" unique_id=398857868]
+[node name="Legging" type="Sprite2D" parent="PlayerAnimation/LeftSprites" unique_id=398857868]
 position = Vector2(6, -3)
 texture = ExtResource("4_phah1")
 flip_h = true
 
-[node name="Legging2" type="Sprite2D" parent="Animation/LeftSprites" unique_id=1272481326]
+[node name="Legging2" type="Sprite2D" parent="PlayerAnimation/LeftSprites" unique_id=1272481326]
 position = Vector2(0, -3)
 texture = ExtResource("4_phah1")
 flip_h = true
 
-[node name="Body" type="Node2D" parent="Animation/LeftSprites" unique_id=356982681]
+[node name="Body" type="Node2D" parent="PlayerAnimation/LeftSprites" unique_id=356982681]
 
-[node name="Arm1" type="Sprite2D" parent="Animation/LeftSprites/Body" unique_id=1943139542]
+[node name="Arm1" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Body" unique_id=1943139542]
 position = Vector2(-3, -15.125)
 texture = ExtResource("5_7lubx")
 flip_h = true
 
-[node name="Gauntlet1" type="Sprite2D" parent="Animation/LeftSprites/Body/Arm1" unique_id=2058714396]
+[node name="Gauntlet1" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Body/Arm1" unique_id=2058714396]
 position = Vector2(0.5, 6.5)
 texture = ExtResource("6_ur6fg")
 flip_h = true
 
-[node name="Chestplate" type="Sprite2D" parent="Animation/LeftSprites/Body" unique_id=1780975982]
+[node name="Chestplate" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Body" unique_id=1780975982]
 position = Vector2(3, -12)
 texture = ExtResource("7_x22oy")
 flip_h = true
 
-[node name="Arm" type="Sprite2D" parent="Animation/LeftSprites/Body" unique_id=262495082]
+[node name="Arm" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Body" unique_id=262495082]
 position = Vector2(9.5, -15.5)
 texture = ExtResource("8_fmdqi")
 flip_h = true
 
-[node name="Gauntlet" type="Sprite2D" parent="Animation/LeftSprites/Body/Arm" unique_id=1568077846]
+[node name="Gauntlet" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Body/Arm" unique_id=1568077846]
 position = Vector2(0, 7)
 texture = ExtResource("9_6bda7")
 flip_h = true
 
-[node name="Head" type="Node2D" parent="Animation/LeftSprites" unique_id=1538705431]
+[node name="Head" type="Node2D" parent="PlayerAnimation/LeftSprites" unique_id=1538705431]
 
-[node name="HeadBase" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=213251393]
+[node name="HeadBase" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=213251393]
 position = Vector2(3, -27.5)
 texture = ExtResource("14_wyv4u")
 flip_h = true
 
-[node name="OpenEye1" type="Sprite2D" parent="Animation/LeftSprites/Head/HeadBase" unique_id=2031924379]
+[node name="OpenEye1" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head/HeadBase" unique_id=2031924379]
 position = Vector2(-6, 1.5)
 texture = ExtResource("15_44nwt")
 flip_h = true
 
-[node name="OpenEye" type="Sprite2D" parent="Animation/LeftSprites/Head/HeadBase" unique_id=1347718009]
+[node name="OpenEye" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head/HeadBase" unique_id=1347718009]
 position = Vector2(2, 1.5)
 texture = ExtResource("16_86plw")
 flip_h = true
 
-[node name="Mouth" type="Sprite2D" parent="Animation/LeftSprites/Head/HeadBase" unique_id=2052710198]
+[node name="Mouth" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head/HeadBase" unique_id=2052710198]
 position = Vector2(-1.5, 7)
 texture = ExtResource("19_ag1xb")
 flip_h = true
 
-[node name="ClosedEye1" type="Sprite2D" parent="Animation/LeftSprites/Head/HeadBase" unique_id=457499286]
-visible = false
+[node name="ClosedEye1" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head/HeadBase" unique_id=457499286]
 position = Vector2(-5.5, 2)
 texture = ExtResource("17_xe4ap")
 flip_h = true
 
-[node name="ClosedEye" type="Sprite2D" parent="Animation/LeftSprites/Head/HeadBase" unique_id=1055453104]
-visible = false
+[node name="ClosedEye" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head/HeadBase" unique_id=1055453104]
 position = Vector2(1.5, 2)
 texture = ExtResource("18_itjtq")
 flip_h = true
 
-[node name="BaseHair" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=1967616880]
+[node name="BaseHair" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=1967616880]
 position = Vector2(3, -32.5)
 texture = ExtResource("20_nlbhx")
 flip_h = true
 
-[node name="Ahoge1" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=393113885]
+[node name="Ahoge1" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=393113885]
 position = Vector2(12.5, -37)
 texture = ExtResource("21_iu54k")
 flip_h = true
 
-[node name="Ahoge" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=355761482]
+[node name="Ahoge" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=355761482]
 position = Vector2(8.5, -40)
 texture = ExtResource("22_g0sd6")
 flip_h = true
 
-[node name="SideHair1" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=1939651529]
+[node name="SideHair1" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=1939651529]
 position = Vector2(-4.5, -19.5)
 texture = ExtResource("13_o50rk")
 flip_h = true
 
-[node name="SideHair" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=2117166047]
+[node name="SideHair" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=2117166047]
 position = Vector2(9, -21.5)
 texture = ExtResource("23_nbmts")
 flip_h = true
 
-[node name="UpperSideHair1" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=19627294]
+[node name="UpperSideHair1" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=19627294]
 position = Vector2(-6.5, -22.875)
 texture = ExtResource("24_h7k4v")
 flip_h = true
 
-[node name="UpperSideHair2" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=1464931729]
+[node name="UpperSideHair2" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=1464931729]
 position = Vector2(9.5, -28.5)
 texture = ExtResource("25_sb1uu")
 flip_h = true
 
-[node name="UpperSideHair" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=1284589316]
+[node name="UpperSideHair" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=1284589316]
 position = Vector2(-7, -29.875)
 texture = ExtResource("26_t4ln1")
 flip_h = true
 
-[node name="BangHair" type="Sprite2D" parent="Animation/LeftSprites/Head" unique_id=241724373]
+[node name="BangHair" type="Sprite2D" parent="PlayerAnimation/LeftSprites/Head" unique_id=241724373]
 position = Vector2(-0.5, -31)
 texture = ExtResource("27_jsp28")
 flip_h = true
 
-[node name="UpSprites" type="Node2D" parent="Animation" unique_id=1533558840]
+[node name="UpSprites" type="Node2D" parent="PlayerAnimation" unique_id=1533558840]
 visible = false
 scale = Vector2(8, 8)
 
-[node name="Legging" type="Sprite2D" parent="Animation/UpSprites" unique_id=11062661]
+[node name="Legging" type="Sprite2D" parent="PlayerAnimation/UpSprites" unique_id=11062661]
 position = Vector2(3, -3)
 texture = ExtResource("28_3gcsh")
 
-[node name="Legging2" type="Sprite2D" parent="Animation/UpSprites" unique_id=1541608381]
+[node name="Legging2" type="Sprite2D" parent="PlayerAnimation/UpSprites" unique_id=1541608381]
 position = Vector2(-3, -3)
 texture = ExtResource("28_3gcsh")
 flip_h = true
 
-[node name="Body" type="Node2D" parent="Animation/UpSprites" unique_id=620751185]
+[node name="Body" type="Node2D" parent="PlayerAnimation/UpSprites" unique_id=620751185]
 
-[node name="Gauntlet" type="Sprite2D" parent="Animation/UpSprites/Body" unique_id=2063251717]
+[node name="Gauntlet" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body" unique_id=2063251717]
 position = Vector2(-10, -10)
 texture = ExtResource("29_v1qhd")
 
-[node name="Gauntlet2" type="Sprite2D" parent="Animation/UpSprites/Body" unique_id=1562859803]
+[node name="Gauntlet2" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body" unique_id=1562859803]
 position = Vector2(10, -10)
 texture = ExtResource("29_v1qhd")
 flip_h = true
 
-[node name="Chestplate" type="Sprite2D" parent="Animation/UpSprites/Body" unique_id=333808072]
+[node name="Chestplate" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body" unique_id=333808072]
 position = Vector2(0, -12.5)
 texture = ExtResource("30_p1dx7")
 
-[node name="Head" type="Node2D" parent="Animation/UpSprites" unique_id=37918258]
+[node name="Head" type="Node2D" parent="PlayerAnimation/UpSprites" unique_id=37918258]
 
-[node name="BackHair" type="Sprite2D" parent="Animation/UpSprites/Head" unique_id=710221574]
+[node name="BackHair" type="Sprite2D" parent="PlayerAnimation/UpSprites/Head" unique_id=710221574]
 position = Vector2(0, -25)
 texture = ExtResource("31_piwni")
 
-[node name="Ahoge" type="Sprite2D" parent="Animation/UpSprites/Head" unique_id=451436664]
+[node name="Ahoge" type="Sprite2D" parent="PlayerAnimation/UpSprites/Head" unique_id=451436664]
 position = Vector2(0.5, -42)
 texture = ExtResource("32_3qd8p")
 
-[node name="DownSprites" type="Node2D" parent="Animation" unique_id=747455519]
+[node name="DownSprites" type="Node2D" parent="PlayerAnimation" unique_id=747455519]
 visible = false
 scale = Vector2(8, 8)
 
-[node name="BackHair" type="Sprite2D" parent="Animation/DownSprites" unique_id=1787771952]
+[node name="BackHair" type="Sprite2D" parent="PlayerAnimation/DownSprites" unique_id=1787771952]
 position = Vector2(-0.5, -17)
 texture = ExtResource("33_fakdl")
 
-[node name="Body" type="Node2D" parent="Animation/DownSprites" unique_id=145704575]
+[node name="Body" type="Node2D" parent="PlayerAnimation/DownSprites" unique_id=145704575]
 
-[node name="Legging" type="Sprite2D" parent="Animation/DownSprites/Body" unique_id=1953554641]
+[node name="Legging" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body" unique_id=1953554641]
 position = Vector2(3, -2.875)
 texture = ExtResource("34_ijqpg")
 
-[node name="Legging2" type="Sprite2D" parent="Animation/DownSprites/Body" unique_id=230655731]
+[node name="Legging2" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body" unique_id=230655731]
 position = Vector2(-3, -3)
 texture = ExtResource("34_ijqpg")
 flip_h = true
 
-[node name="Chestplate" type="Sprite2D" parent="Animation/DownSprites/Body" unique_id=1306056589]
+[node name="Chestplate" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body" unique_id=1306056589]
 position = Vector2(0, -11.5)
 texture = ExtResource("35_u85sn")
 
-[node name="Arm" type="Sprite2D" parent="Animation/DownSprites/Body" unique_id=636369093]
+[node name="Arm" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body" unique_id=636369093]
 z_index = 1
 position = Vector2(-8.5, -14.5)
 texture = ExtResource("36_p086k")
 
-[node name="Gauntlet" type="Sprite2D" parent="Animation/DownSprites/Body/Arm" unique_id=284514019]
+[node name="Gauntlet" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm" unique_id=284514019]
 z_index = 1
 position = Vector2(-1.5, 6.5)
 texture = ExtResource("37_56kgu")
 
-[node name="Arm1" type="Sprite2D" parent="Animation/DownSprites/Body" unique_id=1257250453]
+[node name="Arm1" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body" unique_id=1257250453]
 position = Vector2(8.5, -14.5)
 texture = ExtResource("36_p086k")
 flip_h = true
 
-[node name="Gauntlet1" type="Sprite2D" parent="Animation/DownSprites/Body/Arm1" unique_id=1019801824]
+[node name="Gauntlet1" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1" unique_id=1019801824]
 position = Vector2(1.5, 6.5)
 texture = ExtResource("37_56kgu")
 flip_h = true
 
-[node name="Head" type="Node2D" parent="Animation/DownSprites" unique_id=2039253707]
+[node name="Head" type="Node2D" parent="PlayerAnimation/DownSprites" unique_id=2039253707]
 
-[node name="HeadBase" type="Sprite2D" parent="Animation/DownSprites/Head" unique_id=323100194]
+[node name="HeadBase" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=323100194]
 position = Vector2(0, -27.5)
 texture = ExtResource("38_sexpx")
 
-[node name="Mouth" type="Sprite2D" parent="Animation/DownSprites/Head/HeadBase" unique_id=1553524263]
+[node name="Mouth" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head/HeadBase" unique_id=1553524263]
 position = Vector2(0, 8)
 texture = ExtResource("39_iq5ux")
 
-[node name="OpenEye" type="Sprite2D" parent="Animation/DownSprites/Head/HeadBase" unique_id=943696490]
+[node name="OpenEye" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head/HeadBase" unique_id=943696490]
 position = Vector2(4, 2.5)
 texture = ExtResource("40_1fn6i")
 
-[node name="OpenEye2" type="Sprite2D" parent="Animation/DownSprites/Head/HeadBase" unique_id=1677964060]
+[node name="OpenEye2" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head/HeadBase" unique_id=1677964060]
 position = Vector2(-4, 2.5)
 texture = ExtResource("40_1fn6i")
 flip_h = true
 
-[node name="ClosedEye" type="Sprite2D" parent="Animation/DownSprites/Head/HeadBase" unique_id=661952816]
+[node name="ClosedEye" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head/HeadBase" unique_id=661952816]
 visible = false
 position = Vector2(4.5, 3)
 texture = ExtResource("41_fcuvw")
 
-[node name="ClosedEye2" type="Sprite2D" parent="Animation/DownSprites/Head/HeadBase" unique_id=458694676]
+[node name="ClosedEye2" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head/HeadBase" unique_id=458694676]
 visible = false
 position = Vector2(-4.5, 3)
 texture = ExtResource("41_fcuvw")
 flip_h = true
 
-[node name="BaseHair" type="Sprite2D" parent="Animation/DownSprites/Head" unique_id=116114077]
+[node name="BaseHair" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=116114077]
 position = Vector2(0.5, -34)
 texture = ExtResource("42_162g7")
 
-[node name="Ahoge" type="Sprite2D" parent="Animation/DownSprites/Head" unique_id=283962890]
+[node name="Ahoge" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=283962890]
 position = Vector2(0.5, -41.5)
 texture = ExtResource("43_33ces")
 
-[node name="SideHair" type="Sprite2D" parent="Animation/DownSprites/Head" unique_id=1450926994]
+[node name="SideHair" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=1450926994]
 position = Vector2(8.5, -17.5)
 texture = ExtResource("44_w7snv")
 
-[node name="SideHair2" type="Sprite2D" parent="Animation/DownSprites/Head" unique_id=261969827]
+[node name="SideHair2" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=261969827]
 z_index = 1
 position = Vector2(-8.5, -17.5)
 texture = ExtResource("44_w7snv")
 flip_h = true
 
-[node name="UpperSideHair1" type="Sprite2D" parent="Animation/DownSprites/Head" unique_id=639119533]
+[node name="UpperSideHair1" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=639119533]
 position = Vector2(10, -29.5)
 texture = ExtResource("45_urxao")
 
-[node name="UpperSideHair" type="Sprite2D" parent="Animation/DownSprites/Head" unique_id=1106961258]
+[node name="UpperSideHair" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=1106961258]
 z_index = 1
 position = Vector2(-9.5, -29.375)
 texture = ExtResource("46_pq7tv")
 
-[node name="BangHair" type="Sprite2D" parent="Animation/DownSprites/Head" unique_id=2040341118]
+[node name="BangHair" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=2040341118]
 position = Vector2(0.5, -30)
 texture = ExtResource("47_hwghf")
 
-[node name="AnimationTree" type="AnimationTree" parent="Animation" unique_id=1975829203]
+[node name="AnimationTree" type="AnimationTree" parent="PlayerAnimation" unique_id=1975829203]
 active = false
 deterministic = false
 root_node = NodePath("../..")
@@ -475,18 +534,20 @@ tree_root = SubResource("AnimationNodeStateMachine_nxfn5")
 anim_player = NodePath("../BodyAnimationPlayer")
 parameters/BlendSpace2D/blend_position = Vector2(0, 0)
 
-[node name="HeadAnimationPlayer" type="AnimationPlayer" parent="Animation" unique_id=1877567493]
+[node name="HeadAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimation" unique_id=1877567493]
 root_node = NodePath("../..")
 libraries/ = ExtResource("48_32u6f")
 autoplay = &"IdleRight"
 
-[node name="FaceAnimationPlayer" type="AnimationPlayer" parent="Animation" unique_id=737676416]
+[node name="FaceAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimation" unique_id=737676416]
 root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_3t7an")
+autoplay = &"Blink"
 
-[node name="BodyAnimationPlayer" type="AnimationPlayer" parent="Animation" unique_id=166096817]
+[node name="BodyAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimation" unique_id=166096817]
 root_node = NodePath("../..")
 libraries/ = ExtResource("49_oqnu7")
-autoplay = &"SpearIdleRight"
+autoplay = &"SpearIdleLeft"
 
 [node name="PlayerCollisionBox" type="CollisionShape2D" parent="." unique_id=1582587272]
 visible = false
