@@ -55,36 +55,130 @@
 [ext_resource type="Animation" uid="uid://cvxx3r86rpm7o" path="res://Project Purgatory/Animations/PlayerAnimations/Blink.res" id="50_phah1"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_phah1"]
-animation = &"SpearIdleDown"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7lubx"]
 animation = &"SpearIdleLeft"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7lubx"]
+animation = &"SwordIdleLeft"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ur6fg"]
+advance_mode = 2
+advance_condition = &"spear"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x22oy"]
+advance_mode = 2
+advance_condition = &"longsword"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fmdqi"]
+states/SpearIdleLeft/node = SubResource("AnimationNodeAnimation_phah1")
+states/SpearIdleLeft/position = Vector2(194.8, 20.64)
+states/Start/position = Vector2(195.2, 99.68)
+states/SwordIdleLeft/node = SubResource("AnimationNodeAnimation_7lubx")
+states/SwordIdleLeft/position = Vector2(317.2, 177.59999)
+transitions = ["Start", "SpearIdleLeft", SubResource("AnimationNodeStateMachineTransition_ur6fg"), "Start", "SwordIdleLeft", SubResource("AnimationNodeStateMachineTransition_x22oy")]
+graph_offset = Vector2(-188, -25)
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ur6fg"]
-animation = &"SpearIdleRight"
+animation = &"SpearIdleDown"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x22oy"]
-animation = &"SpearIdleUp"
+animation = &"SwordIdleDown"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_fmdqi"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_phah1")
-blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_7lubx")
-blend_point_1/pos = Vector2(-1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_ur6fg")
-blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_x22oy")
-blend_point_3/pos = Vector2(0, -1)
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fmdqi"]
+advance_mode = 2
+advance_condition = &"spear"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6bda7"]
 advance_mode = 2
+advance_condition = &"sword"
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nxfn5"]
-states/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_fmdqi")
-states/BlendSpace2D/position = Vector2(320.8, 99.78765)
-states/Start/position = Vector2(140.8, 100.03456)
-transitions = ["Start", "BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_6bda7")]
-graph_offset = Vector2(10, 46)
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6bda7"]
+states/SpearIdleDown/node = SubResource("AnimationNodeAnimation_ur6fg")
+states/SpearIdleDown/position = Vector2(200.08, 22.4)
+states/SwordIdleDown/node = SubResource("AnimationNodeAnimation_x22oy")
+states/SwordIdleDown/position = Vector2(334.8, 175.2)
+transitions = ["Start", "SpearIdleDown", SubResource("AnimationNodeStateMachineTransition_fmdqi"), "Start", "SwordIdleDown", SubResource("AnimationNodeStateMachineTransition_6bda7")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1e8y2"]
+animation = &"SpearIdleUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2n0g"]
+animation = &"SwordIdleUp"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e2n0g"]
+advance_mode = 2
+advance_condition = &"spear"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ri0t7"]
+advance_mode = 2
+advance_condition = &"sword"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ri0t7"]
+states/SpearIdleUp/node = SubResource("AnimationNodeAnimation_1e8y2")
+states/SpearIdleUp/position = Vector2(207.95999, 17.374458)
+states/Start/position = Vector2(207.2, 102.137856)
+states/SwordIdleUp/node = SubResource("AnimationNodeAnimation_e2n0g")
+states/SwordIdleUp/position = Vector2(364.91998, 156)
+transitions = ["Start", "SpearIdleUp", SubResource("AnimationNodeStateMachineTransition_e2n0g"), "Start", "SwordIdleUp", SubResource("AnimationNodeStateMachineTransition_ri0t7")]
+graph_offset = Vector2(7, -2)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o50rk"]
+animation = &"SpearIdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wyv4u"]
+animation = &"SwordIdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_44nwt"]
+animation = &"SwordSprintRight"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_86plw"]
+advance_mode = 2
+advance_condition = &"spear"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xe4ap"]
+advance_mode = 2
+advance_condition = &"sword"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_itjtq"]
+advance_mode = 2
+advance_condition = &"sprint"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ag1xb"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_o50rk"]
+states/SpearIdleRight/node = SubResource("AnimationNodeAnimation_o50rk")
+states/SpearIdleRight/position = Vector2(199.44, 28.8)
+states/SwordIdleRight/node = SubResource("AnimationNodeAnimation_wyv4u")
+states/SwordIdleRight/position = Vector2(331.59998, 164)
+states/SwordSprintRight/node = SubResource("AnimationNodeAnimation_44nwt")
+states/SwordSprintRight/position = Vector2(550.8, 166.8)
+transitions = ["Start", "SpearIdleRight", SubResource("AnimationNodeStateMachineTransition_86plw"), "Start", "SwordIdleRight", SubResource("AnimationNodeStateMachineTransition_xe4ap"), "SwordIdleRight", "SwordSprintRight", SubResource("AnimationNodeStateMachineTransition_itjtq"), "SwordSprintRight", "SwordIdleRight", SubResource("AnimationNodeStateMachineTransition_ag1xb")]
+graph_offset = Vector2(-60, -82)
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_wyv4u"]
+blend_point_0/node = SubResource("AnimationNodeStateMachine_fmdqi")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeStateMachine_6bda7")
+blend_point_1/pos = Vector2(0, 1.1)
+blend_point_2/node = SubResource("AnimationNodeStateMachine_ri0t7")
+blend_point_2/pos = Vector2(0, -1.1)
+blend_point_3/node = SubResource("AnimationNodeStateMachine_o50rk")
+blend_point_3/pos = Vector2(1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_44nwt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_86plw"]
+states/BodyAnimations/node = SubResource("AnimationNodeBlendSpace2D_wyv4u")
+states/BodyAnimations/position = Vector2(425.59998, 100.016)
+states/Start/position = Vector2(207.2, 101.024)
+transitions = ["Start", "BodyAnimations", SubResource("AnimationNodeStateMachineTransition_44nwt")]
+graph_offset = Vector2(-50, -51)
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xe4ap"]
 
 [sub_resource type="Animation" id="Animation_mq36u"]
 length = 0.001
@@ -202,6 +296,10 @@ texture = ExtResource("8_fmdqi")
 position = Vector2(0, 7)
 texture = ExtResource("9_6bda7")
 
+[node name="SilverSpear" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=1433430567]
+z_index = -1
+texture = ExtResource("10_1e8y2")
+
 [node name="SilverSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=1230502555]
 visible = false
 position = Vector2(45.25, 3.5)
@@ -211,10 +309,6 @@ texture = ExtResource("11_e2n0g")
 visible = false
 position = Vector2(63.375, 1.5)
 texture = ExtResource("12_ri0t7")
-
-[node name="SilverSpear" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=1433430567]
-z_index = -1
-texture = ExtResource("10_1e8y2")
 
 [node name="Head" type="Node2D" parent="PlayerAnimation/RightSprites/Body" unique_id=404324860]
 
@@ -430,28 +524,46 @@ position = Vector2(0.5, -30)
 scale = Vector2(1.0896609, 1)
 texture = ExtResource("47_hwghf")
 
-[node name="AnimationTree" type="AnimationTree" parent="PlayerAnimation" unique_id=1975829203]
+[node name="BodyAnimationTree" type="AnimationTree" parent="PlayerAnimation" unique_id=1975829203]
 active = false
 deterministic = false
 root_node = NodePath("../..")
-tree_root = SubResource("AnimationNodeStateMachine_nxfn5")
+tree_root = SubResource("AnimationNodeStateMachine_86plw")
 anim_player = NodePath("../BodyAnimationPlayer")
-parameters/BlendSpace2D/blend_position = Vector2(0, 0)
+parameters/BodyAnimations/blend_position = Vector2(0, 0)
+parameters/BodyAnimations/0/conditions/longsword = false
+parameters/BodyAnimations/0/conditions/spear = false
+parameters/BodyAnimations/1/conditions/spear = false
+parameters/BodyAnimations/1/conditions/sword = false
+parameters/BodyAnimations/2/conditions/spear = false
+parameters/BodyAnimations/2/conditions/sword = false
+parameters/BodyAnimations/3/conditions/idle = false
+parameters/BodyAnimations/3/conditions/spear = false
+parameters/BodyAnimations/3/conditions/sprint = false
+parameters/BodyAnimations/3/conditions/sword = false
+
+[node name="HeadAnimationTree" type="AnimationTree" parent="PlayerAnimation" unique_id=884987599]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_xe4ap")
+anim_player = NodePath("../HeadAnimationPlayer")
 
 [node name="HeadAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimation" unique_id=1877567493]
 root_node = NodePath("../..")
+callback_mode_process = 0
 libraries/ = ExtResource("48_32u6f")
-autoplay = &"IdleDown"
+autoplay = &"IdleRight"
 
 [node name="FaceAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimation" unique_id=737676416]
 root_node = NodePath("../..")
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_3t7an")
 autoplay = &"Blink"
 
 [node name="BodyAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimation" unique_id=166096817]
 root_node = NodePath("../..")
+callback_mode_process = 0
 libraries/ = ExtResource("49_oqnu7")
-autoplay = &"SpearIdleDown"
+autoplay = &"SpearIdleLeft"
 
 [node name="PlayerCollisionBox" type="CollisionShape2D" parent="." unique_id=1582587272]
 visible = false
@@ -469,3 +581,9 @@ drag_left_margin = 0.3
 drag_top_margin = 0.3
 drag_right_margin = 0.3
 drag_bottom_margin = 0.3
+
+[node name="DirectionRaycast" type="RayCast2D" parent="." unique_id=588692055]
+scale = Vector2(5, 5)
+target_position = Vector2(0, 0)
+collision_mask = 0
+collide_with_bodies = false
