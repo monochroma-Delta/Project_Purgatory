@@ -70,12 +70,12 @@ advance_condition = &"longsword"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fmdqi"]
 states/SpearIdleLeft/node = SubResource("AnimationNodeAnimation_phah1")
-states/SpearIdleLeft/position = Vector2(194.8, 20.64)
+states/SpearIdleLeft/position = Vector2(194.96, 19.84)
 states/Start/position = Vector2(195.2, 99.68)
 states/SwordIdleLeft/node = SubResource("AnimationNodeAnimation_7lubx")
 states/SwordIdleLeft/position = Vector2(317.2, 177.59999)
 transitions = ["Start", "SpearIdleLeft", SubResource("AnimationNodeStateMachineTransition_ur6fg"), "Start", "SwordIdleLeft", SubResource("AnimationNodeStateMachineTransition_x22oy")]
-graph_offset = Vector2(-188, -25)
+graph_offset = Vector2(-164, -2)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ur6fg"]
 animation = &"SpearIdleDown"
@@ -119,7 +119,7 @@ states/Start/position = Vector2(207.2, 102.137856)
 states/SwordIdleUp/node = SubResource("AnimationNodeAnimation_e2n0g")
 states/SwordIdleUp/position = Vector2(364.91998, 156)
 transitions = ["Start", "SpearIdleUp", SubResource("AnimationNodeStateMachineTransition_e2n0g"), "Start", "SwordIdleUp", SubResource("AnimationNodeStateMachineTransition_ri0t7")]
-graph_offset = Vector2(7, -2)
+graph_offset = Vector2(-31, -28)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o50rk"]
 animation = &"SpearIdleRight"
@@ -148,25 +148,27 @@ advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_o50rk"]
 states/SpearIdleRight/node = SubResource("AnimationNodeAnimation_o50rk")
-states/SpearIdleRight/position = Vector2(199.44, 28.8)
+states/SpearIdleRight/position = Vector2(199.888, 28.8)
+states/Start/position = Vector2(188.8, 127.2)
 states/SwordIdleRight/node = SubResource("AnimationNodeAnimation_wyv4u")
 states/SwordIdleRight/position = Vector2(331.59998, 164)
 states/SwordSprintRight/node = SubResource("AnimationNodeAnimation_44nwt")
 states/SwordSprintRight/position = Vector2(550.8, 166.8)
 transitions = ["Start", "SpearIdleRight", SubResource("AnimationNodeStateMachineTransition_86plw"), "Start", "SwordIdleRight", SubResource("AnimationNodeStateMachineTransition_xe4ap"), "SwordIdleRight", "SwordSprintRight", SubResource("AnimationNodeStateMachineTransition_itjtq"), "SwordSprintRight", "SwordIdleRight", SubResource("AnimationNodeStateMachineTransition_ag1xb")]
-graph_offset = Vector2(-60, -82)
+graph_offset = Vector2(-207, 1)
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_wyv4u"]
 blend_point_0/node = SubResource("AnimationNodeStateMachine_fmdqi")
-blend_point_0/pos = Vector2(-1, 0)
+blend_point_0/pos = Vector2(1, 0)
 blend_point_1/node = SubResource("AnimationNodeStateMachine_6bda7")
 blend_point_1/pos = Vector2(0, 1.1)
 blend_point_2/node = SubResource("AnimationNodeStateMachine_ri0t7")
 blend_point_2/pos = Vector2(0, -1.1)
 blend_point_3/node = SubResource("AnimationNodeStateMachine_o50rk")
-blend_point_3/pos = Vector2(1, 0)
+blend_point_3/pos = Vector2(-1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_44nwt"]
 advance_mode = 2
@@ -176,7 +178,7 @@ states/BodyAnimations/node = SubResource("AnimationNodeBlendSpace2D_wyv4u")
 states/BodyAnimations/position = Vector2(425.59998, 100.016)
 states/Start/position = Vector2(207.2, 101.024)
 transitions = ["Start", "BodyAnimations", SubResource("AnimationNodeStateMachineTransition_44nwt")]
-graph_offset = Vector2(-50, -51)
+graph_offset = Vector2(-17, -24)
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xe4ap"]
 
@@ -225,6 +227,54 @@ tracks/3/path = NodePath("PlayerAnimation/RightSprites/Body/Head/HeadBase/Closed
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerAnimation/DownSprites/Head/HeadBase/OpenEye:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerAnimation/DownSprites/Head/HeadBase/OpenEye2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PlayerAnimation/DownSprites/Head/HeadBase/ClosedEye:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PlayerAnimation/DownSprites/Head/HeadBase/ClosedEye2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -284,6 +334,28 @@ texture = ExtResource("5_7lubx")
 position = Vector2(-0.5, 6.5)
 texture = ExtResource("6_ur6fg")
 
+[node name="LeftWeaponPlaceHolder" type="Node2D" parent="PlayerAnimation/RightSprites/Body/Arm1/Gauntlet1" unique_id=1681414689]
+visible = false
+scale = Vector2(0.95, 0.95)
+
+[node name="LeftSpear" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm1/Gauntlet1/LeftWeaponPlaceHolder" unique_id=1939598221]
+visible = false
+z_index = -1
+position = Vector2(-0.39560914, -7.624637)
+rotation = -0.03987384
+scale = Vector2(1, -1)
+texture = ExtResource("10_1e8y2")
+
+[node name="LeftSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm1/Gauntlet1/LeftWeaponPlaceHolder" unique_id=470817787]
+visible = false
+position = Vector2(45.25, 3.5)
+texture = ExtResource("11_e2n0g")
+
+[node name="LeftGreatSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm1/Gauntlet1/LeftWeaponPlaceHolder" unique_id=728029285]
+visible = false
+position = Vector2(63.375004, 1.500001)
+texture = ExtResource("12_ri0t7")
+
 [node name="Chestplate" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body" unique_id=687023546]
 position = Vector2(0, -12)
 texture = ExtResource("7_x22oy")
@@ -296,16 +368,19 @@ texture = ExtResource("8_fmdqi")
 position = Vector2(0, 7)
 texture = ExtResource("9_6bda7")
 
-[node name="SilverSpear" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=1433430567]
+[node name="RightWeaponPlaceHolder" type="Node2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=1212670343]
+scale = Vector2(1.03, 1.03)
+
+[node name="RightSpear" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet/RightWeaponPlaceHolder" unique_id=1433430567]
 z_index = -1
 texture = ExtResource("10_1e8y2")
 
-[node name="SilverSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=1230502555]
+[node name="RightSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet/RightWeaponPlaceHolder" unique_id=1230502555]
 visible = false
-position = Vector2(45.25, 3.5)
+position = Vector2(45.25, 3.5000029)
 texture = ExtResource("11_e2n0g")
 
-[node name="SilverGreatSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet" unique_id=510607668]
+[node name="RightGreatSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet/RightWeaponPlaceHolder" unique_id=510607668]
 visible = false
 position = Vector2(63.375, 1.5)
 texture = ExtResource("12_ri0t7")
@@ -458,6 +533,25 @@ position = Vector2(1.5, 6.5)
 texture = ExtResource("37_56kgu")
 flip_h = true
 
+[node name="DownWeaponPlaceHolder" type="Node2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1" unique_id=1436241958]
+
+[node name="RightSpear" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1/DownWeaponPlaceHolder" unique_id=372723609]
+z_index = -1
+position = Vector2(-0.25, -9.25)
+rotation = -0.010086626
+scale = Vector2(0.9999998, -0.99999976)
+texture = ExtResource("10_1e8y2")
+
+[node name="RightSword" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1/DownWeaponPlaceHolder" unique_id=35261679]
+visible = false
+position = Vector2(45.25, 3.5000029)
+texture = ExtResource("11_e2n0g")
+
+[node name="RightGreatSword" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1/DownWeaponPlaceHolder" unique_id=1268242509]
+visible = false
+position = Vector2(63.375, 1.5)
+texture = ExtResource("12_ri0t7")
+
 [node name="Head" type="Node2D" parent="PlayerAnimation/DownSprites" unique_id=2039253707]
 
 [node name="BackHair" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=1787771952]
@@ -525,24 +619,25 @@ scale = Vector2(1.0896609, 1)
 texture = ExtResource("47_hwghf")
 
 [node name="BodyAnimationTree" type="AnimationTree" parent="PlayerAnimation" unique_id=1975829203]
-active = false
 deterministic = false
 root_node = NodePath("../..")
+callback_mode_process = 0
 tree_root = SubResource("AnimationNodeStateMachine_86plw")
 anim_player = NodePath("../BodyAnimationPlayer")
-parameters/BodyAnimations/blend_position = Vector2(0, 0)
+parameters/BodyAnimations/blend_position = Vector2(0.066609025, -0.008333325)
 parameters/BodyAnimations/0/conditions/longsword = false
-parameters/BodyAnimations/0/conditions/spear = false
-parameters/BodyAnimations/1/conditions/spear = false
+parameters/BodyAnimations/0/conditions/spear = true
+parameters/BodyAnimations/1/conditions/spear = true
 parameters/BodyAnimations/1/conditions/sword = false
-parameters/BodyAnimations/2/conditions/spear = false
+parameters/BodyAnimations/2/conditions/spear = true
 parameters/BodyAnimations/2/conditions/sword = false
 parameters/BodyAnimations/3/conditions/idle = false
-parameters/BodyAnimations/3/conditions/spear = false
+parameters/BodyAnimations/3/conditions/spear = true
 parameters/BodyAnimations/3/conditions/sprint = false
 parameters/BodyAnimations/3/conditions/sword = false
 
 [node name="HeadAnimationTree" type="AnimationTree" parent="PlayerAnimation" unique_id=884987599]
+active = false
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeStateMachine_xe4ap")
 anim_player = NodePath("../HeadAnimationPlayer")
@@ -563,7 +658,6 @@ autoplay = &"Blink"
 root_node = NodePath("../..")
 callback_mode_process = 0
 libraries/ = ExtResource("49_oqnu7")
-autoplay = &"SpearIdleLeft"
 
 [node name="PlayerCollisionBox" type="CollisionShape2D" parent="." unique_id=1582587272]
 visible = false
