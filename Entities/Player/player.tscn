@@ -69,6 +69,7 @@ advance_mode = 2
 advance_condition = &"longsword"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fmdqi"]
+state_machine_type = 1
 states/SpearIdleLeft/node = SubResource("AnimationNodeAnimation_phah1")
 states/SpearIdleLeft/position = Vector2(194.96, 19.84)
 states/Start/position = Vector2(195.2, 99.68)
@@ -92,6 +93,7 @@ advance_mode = 2
 advance_condition = &"sword"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6bda7"]
+state_machine_type = 1
 states/SpearIdleDown/node = SubResource("AnimationNodeAnimation_ur6fg")
 states/SpearIdleDown/position = Vector2(200.08, 22.4)
 states/SwordIdleDown/node = SubResource("AnimationNodeAnimation_x22oy")
@@ -113,6 +115,7 @@ advance_mode = 2
 advance_condition = &"sword"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ri0t7"]
+state_machine_type = 1
 states/SpearIdleUp/node = SubResource("AnimationNodeAnimation_1e8y2")
 states/SpearIdleUp/position = Vector2(207.95999, 17.374458)
 states/Start/position = Vector2(207.2, 102.137856)
@@ -169,6 +172,7 @@ advance_mode = 2
 advance_condition = &"sprint"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_o50rk"]
+state_machine_type = 1
 states/SpearIdleRight/node = SubResource("AnimationNodeAnimation_o50rk")
 states/SpearIdleRight/position = Vector2(199.888, 28.8)
 states/SpearSprintRight/node = SubResource("AnimationNodeAnimation_fmdqi")
@@ -179,7 +183,7 @@ states/SwordIdleRight/position = Vector2(331.59998, 164)
 states/SwordSprintRight/node = SubResource("AnimationNodeAnimation_44nwt")
 states/SwordSprintRight/position = Vector2(550.8, 166.8)
 transitions = ["Start", "SpearIdleRight", SubResource("AnimationNodeStateMachineTransition_86plw"), "Start", "SwordIdleRight", SubResource("AnimationNodeStateMachineTransition_xe4ap"), "SwordIdleRight", "SwordSprintRight", SubResource("AnimationNodeStateMachineTransition_itjtq"), "SwordSprintRight", "SwordIdleRight", SubResource("AnimationNodeStateMachineTransition_ag1xb"), "SpearIdleRight", "SpearSprintRight", SubResource("AnimationNodeStateMachineTransition_1e8y2"), "SpearSprintRight", "SpearIdleRight", SubResource("AnimationNodeStateMachineTransition_o50rk"), "Start", "SpearSprintRight", SubResource("AnimationNodeStateMachineTransition_wyv4u")]
-graph_offset = Vector2(-34, -13)
+graph_offset = Vector2(-53, -28)
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_wyv4u"]
 blend_point_0/node = SubResource("AnimationNodeStateMachine_fmdqi")
@@ -204,11 +208,67 @@ states/Start/position = Vector2(207.2, 101.024)
 transitions = ["Start", "BodyAnimations", SubResource("AnimationNodeStateMachineTransition_44nwt")]
 graph_offset = Vector2(-17, -24)
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6bda7"]
+animation = &"IdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ri0t7"]
+animation = &"SprintRight"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nlbhx"]
+advance_mode = 2
+
+[sub_resource type="Curve" id="Curve_7lubx"]
+_data = [Vector2(0.01271186, 0), 0.0, 0.0, 0, 0, Vector2(0.30932203, 0.63405424), 1.2638518, 1.2638518, 0, 0, Vector2(0.9915254, 0.98214895), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iu54k"]
+xfade_time = 0.4
+xfade_curve = SubResource("Curve_7lubx")
+advance_mode = 2
+advance_condition = &"sprint"
+
+[sub_resource type="Curve" id="Curve_ur6fg"]
+_data = [Vector2(0.01271186, 0), 0.0, 0.0, 0, 0, Vector2(0.30932203, 0.63405424), 1.2638518, 1.2638518, 0, 0, Vector2(0.9915254, 0.98214895), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g0sd6"]
+xfade_time = 0.5
+xfade_curve = SubResource("Curve_ur6fg")
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nbmts"]
+states/IdleRight/node = SubResource("AnimationNodeAnimation_6bda7")
+states/IdleRight/position = Vector2(318, 96)
+states/SprintRight/node = SubResource("AnimationNodeAnimation_ri0t7")
+states/SprintRight/position = Vector2(459.6, 92.8)
+transitions = ["Start", "IdleRight", SubResource("AnimationNodeStateMachineTransition_nlbhx"), "IdleRight", "SprintRight", SubResource("AnimationNodeStateMachineTransition_iu54k"), "SprintRight", "IdleRight", SubResource("AnimationNodeStateMachineTransition_g0sd6")]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_h7k4v"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sb1uu"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_t4ln1"]
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_phah1"]
+blend_point_0/node = SubResource("AnimationNodeStateMachine_nbmts")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeStateMachine_h7k4v")
+blend_point_1/pos = Vector2(0, 1.1)
+blend_point_2/node = SubResource("AnimationNodeStateMachine_sb1uu")
+blend_point_2/pos = Vector2(0, -1.1)
+blend_point_3/node = SubResource("AnimationNodeStateMachine_t4ln1")
+blend_point_3/pos = Vector2(1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jsp28"]
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xe4ap"]
 states/HeadAnimations/node = SubResource("AnimationNodeBlendSpace2D_phah1")
-states/HeadAnimations/position = Vector2(339.6, 100.8)
+states/HeadAnimations/position = Vector2(436.40002, 100.64)
+transitions = ["Start", "HeadAnimations", SubResource("AnimationNodeStateMachineTransition_jsp28")]
 
 [sub_resource type="Animation" id="Animation_mq36u"]
 length = 0.001
@@ -664,17 +724,18 @@ parameters/BodyAnimations/3/conditions/sprint = false
 parameters/BodyAnimations/3/conditions/sword = false
 
 [node name="HeadAnimationTree" type="AnimationTree" parent="PlayerAnimation" unique_id=884987599]
-active = false
+deterministic = false
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeStateMachine_xe4ap")
 anim_player = NodePath("../HeadAnimationPlayer")
 parameters/HeadAnimations/blend_position = Vector2(0, 0)
+parameters/HeadAnimations/0/conditions/idle = true
+parameters/HeadAnimations/0/conditions/sprint = false
 
 [node name="HeadAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimation" unique_id=1877567493]
 root_node = NodePath("../..")
 callback_mode_process = 0
 libraries/ = ExtResource("48_32u6f")
-autoplay = &"IdleRight"
 
 [node name="FaceAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimation" unique_id=737676416]
 root_node = NodePath("../..")
@@ -686,7 +747,7 @@ autoplay = &"Blink"
 root_node = NodePath("../..")
 callback_mode_process = 0
 libraries/ = ExtResource("49_oqnu7")
-speed_scale = 1.292
+speed_scale = 1.3
 
 [node name="PlayerCollisionBox" type="CollisionShape2D" parent="." unique_id=1582587272]
 visible = false
@@ -697,6 +758,8 @@ debug_color = Color(0.6431373, 0.33333334, 1, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1067018923]
 position = Vector2(0, -130)
+zoom = Vector2(0.4, 0.4)
+process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

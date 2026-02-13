@@ -4,8 +4,11 @@ class_name Player
 @onready var direction_raycast: RayCast2D = $DirectionRaycast
 @onready var body_animation_tree: AnimationTree = $PlayerAnimation/BodyAnimationTree
 @onready var head_animation_tree: AnimationTree = $PlayerAnimation/HeadAnimationTree
+@onready var head_animation_player: AnimationPlayer = $PlayerAnimation/HeadAnimationPlayer
+@onready var face_animation_player: AnimationPlayer = $PlayerAnimation/FaceAnimationPlayer
+@onready var body_animation_player: AnimationPlayer = $PlayerAnimation/BodyAnimationPlayer
 
-var speed: float = 500.0
+var speed: float = 720.0
 var accel: float = 0.25
 var direction: Vector2
 
@@ -15,4 +18,4 @@ func _physics_process(delta: float) -> void:
 		direction_raycast.target_position = direction * 50
 	move_and_slide()
 	body_animation_tree["parameters/BodyAnimations/blend_position"] = direction
-	
+	head_animation_tree["parameters/HeadAnimations/blend_position"] = direction
