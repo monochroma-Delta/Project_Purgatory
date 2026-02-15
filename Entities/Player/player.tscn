@@ -80,11 +80,71 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_1e8y2")
 nodes/TimeScale/position = Vector2(-960, 320)
 node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2n0g"]
+animation = &"SpearIdleDown"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ri0t7"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o50rk"]
+animation = &"SpearSprintDown"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_wyv4u"]
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ri0t7"]
+graph_offset = Vector2(-646.3475, 125.59009)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_e2n0g")
+nodes/Idle/position = Vector2(-384, 128)
+nodes/Sprint/node = SubResource("AnimationNodeBlend2_ri0t7")
+nodes/Sprint/position = Vector2(-96, 96)
+nodes/Sprint_/node = SubResource("AnimationNodeAnimation_o50rk")
+nodes/Sprint_/position = Vector2(-608, 352)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_wyv4u")
+nodes/TimeScale/position = Vector2(-368, 304)
+node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_44nwt"]
+animation = &"SpearIdleUp"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_86plw"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xe4ap"]
+animation = &"SpearSprintUp"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_itjtq"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_o50rk"]
+graph_offset = Vector2(-507.40204, 128.64177)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_44nwt")
+nodes/Idle/position = Vector2(-192, 144)
+nodes/Sprint/node = SubResource("AnimationNodeBlend2_86plw")
+nodes/Sprint/position = Vector2(16, 144)
+nodes/Sprint_/node = SubResource("AnimationNodeAnimation_xe4ap")
+nodes/Sprint_/position = Vector2(-512, 368)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_itjtq")
+nodes/TimeScale/position = Vector2(-304, 352)
+node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7lubx"]
+animation = &"SpearIdleRight"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ur6fg"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6bda7"]
+animation = &"SpearSprintRight"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_phah1"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_wyv4u"]
+graph_offset = Vector2(-481.47372, 155.08926)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_7lubx")
+nodes/Idle/position = Vector2(-336, 96)
+nodes/Sprint/node = SubResource("AnimationNodeBlend2_ur6fg")
+nodes/Sprint/position = Vector2(-32, 80)
+nodes/Sprint_/node = SubResource("AnimationNodeAnimation_6bda7")
+nodes/Sprint_/position = Vector2(-544, 368)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_phah1")
+nodes/TimeScale/position = Vector2(-336, 368)
+node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_wyv4u"]
 blend_point_0/node = SubResource("AnimationNodeBlendTree_e2n0g")
@@ -133,7 +193,7 @@ animation = &"SprintRight"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_x22oy"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_fmdqi"]
-graph_offset = Vector2(-340.45813, 60.414955)
+graph_offset = Vector2(-447.5376, 59.294456)
 nodes/output/position = Vector2(368, 128)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_phah1")
 nodes/Idle/position = Vector2(-192, 160)
@@ -149,13 +209,33 @@ node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1e8y2"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1e8y2"]
+animation = &"IdleRight"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e2n0g"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ri0t7"]
+animation = &"SprintRight"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_o50rk"]
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_44nwt"]
+graph_offset = Vector2(-460.77548, 99.35664)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_1e8y2")
+nodes/Idle/position = Vector2(-256, 128)
+nodes/Sprint/node = SubResource("AnimationNodeBlend2_e2n0g")
+nodes/Sprint/position = Vector2(0, 112)
+nodes/Sprint_/node = SubResource("AnimationNodeAnimation_ri0t7")
+nodes/Sprint_/position = Vector2(-416, 336)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_o50rk")
+nodes/TimeScale/position = Vector2(-208, 320)
+node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_86plw"]
 blend_point_0/node = SubResource("AnimationNodeBlendTree_fmdqi")
 blend_point_0/pos = Vector2(-1, 0)
 blend_point_1/node = SubResource("AnimationNodeBlendTree_6bda7")
-blend_point_1/pos = Vector2(0, 1.1)
+blend_point_1/pos = Vector2(0, 1.09)
 blend_point_2/node = SubResource("AnimationNodeBlendTree_1e8y2")
 blend_point_2/pos = Vector2(0, -1.1)
 blend_point_3/node = SubResource("AnimationNodeBlendTree_44nwt")
@@ -625,8 +705,15 @@ parameters/BodyLongswordAnimations/blend_position = Vector2(0, 0)
 parameters/BodySpearAnimations/blend_position = Vector2(-0.3053633, 0.03168726)
 parameters/BodySpearAnimations/0/Sprint/blend_amount = 1.0
 parameters/BodySpearAnimations/0/TimeScale/scale = 1.5
+parameters/BodySpearAnimations/1/Sprint/blend_amount = 0.0
+parameters/BodySpearAnimations/1/TimeScale/scale = 1.5
+parameters/BodySpearAnimations/2/Sprint/blend_amount = 0.0
+parameters/BodySpearAnimations/2/TimeScale/scale = 1.5
+parameters/BodySpearAnimations/3/Sprint/blend_amount = 0.0
+parameters/BodySpearAnimations/3/TimeScale/scale = 1.5
 
 [node name="HeadAnimationTree" type="AnimationTree" parent="PlayerAnimation" unique_id=884987599]
+active = false
 deterministic = false
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeStateMachine_xe4ap")
@@ -634,6 +721,8 @@ anim_player = NodePath("../HeadAnimationPlayer")
 parameters/HeadAnimations/blend_position = Vector2(0, 0)
 parameters/HeadAnimations/0/Sprint/blend_amount = 0.0
 parameters/HeadAnimations/0/TimeScale/scale = 1.5
+parameters/HeadAnimations/3/Sprint/blend_amount = 0.0
+parameters/HeadAnimations/3/TimeScale/scale = 1.5
 
 [node name="HeadAnimationPlayer" type="AnimationPlayer" parent="PlayerAnimation" unique_id=1877567493]
 root_node = NodePath("../..")

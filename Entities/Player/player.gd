@@ -13,10 +13,13 @@ class_name Player
 @export var longsword: bool = false
 @export var greatsword: bool = false
 
+
+
 var speed: float = 720.0
 var accel: float = 0.25
 var friction: float = 0.12
 var direction: Vector2
+
 
 func _ready() -> void:
 	body_animation_tree.active = true
@@ -44,7 +47,4 @@ func _physics_process(delta: float) -> void:
 		body_animation_tree["parameters/conditions/spear"] = false
 		body_animation_tree["parameters/BodyGreatswordAnimations/blend_position"] = direction
 	head_animation_tree["parameters/HeadAnimations/blend_position"] = direction
-	
-	
-	
 	
