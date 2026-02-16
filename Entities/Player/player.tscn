@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b8vcq8scjtsnl" path="res://Project Purgatory/Entities/Player/player.gd" id="1_mq36u"]
 [ext_resource type="Texture2D" uid="uid://cedlkj05sbnr8" path="res://AliceSprites/LeftSprites/BackHair1.png" id="2_3t7an"]
 [ext_resource type="Script" uid="uid://da5xafxb2c0t8" path="res://Project Purgatory/Modular Systems/Scripts/state_machine.gd" id="2_7lubx"]
-[ext_resource type="Script" uid="uid://cvylcqodwwt0" path="res://Project Purgatory/Entities/Player/player_animation.gd" id="2_cyx4s"]
 [ext_resource type="Script" uid="uid://cfxfh18fttcff" path="res://Project Purgatory/Entities/Player/idle_state.gd" id="2_phah1"]
 [ext_resource type="Texture2D" uid="uid://b3rfp5xp4m7rf" path="res://AliceSprites/LeftSprites/BackHair.png" id="3_cyx4s"]
 [ext_resource type="Script" uid="uid://eqaeb47iyt7v" path="res://Project Purgatory/Entities/Player/move_state.gd" id="4_7lubx"]
@@ -91,7 +90,7 @@ animation = &"SpearSprintDown"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_wyv4u"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ri0t7"]
-graph_offset = Vector2(-646.3475, 125.59009)
+graph_offset = Vector2(-460.53925, 23.415478)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_e2n0g")
 nodes/Idle/position = Vector2(-384, 128)
 nodes/Sprint/node = SubResource("AnimationNodeBlend2_ri0t7")
@@ -205,7 +204,27 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_x22oy")
 nodes/TimeScale/position = Vector2(-192, 400)
 node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cyx4s"]
+animation = &"IdleDown"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_phah1"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wyv4u"]
+animation = &"SprintDown"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_44nwt"]
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6bda7"]
+graph_offset = Vector2(-398.3252, 50.608715)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_cyx4s")
+nodes/Idle/position = Vector2(-288, 160)
+nodes/Sprint/node = SubResource("AnimationNodeBlend2_phah1")
+nodes/Sprint/position = Vector2(16, 128)
+nodes/Sprint_/node = SubResource("AnimationNodeAnimation_wyv4u")
+nodes/Sprint_/position = Vector2(-448, 400)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_44nwt")
+nodes/TimeScale/position = Vector2(-288, 400)
+node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1e8y2"]
 
@@ -379,7 +398,6 @@ script = ExtResource("2_phah1")
 script = ExtResource("4_7lubx")
 
 [node name="PlayerAnimation" type="Node2D" parent="." unique_id=1074490542]
-script = ExtResource("2_cyx4s")
 
 [node name="RightSprites" type="Node2D" parent="PlayerAnimation" unique_id=416898317]
 visible = false
@@ -597,6 +615,7 @@ texture = ExtResource("37_56kgu")
 
 [node name="Arm1" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body" unique_id=1257250453]
 position = Vector2(8.5, -14.5)
+skew = -0.14486232
 texture = ExtResource("36_p086k")
 flip_h = true
 
@@ -687,7 +706,7 @@ texture = ExtResource("46_pq7tv")
 
 [node name="BangHair" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=2040341118]
 position = Vector2(0.5, -30)
-scale = Vector2(1.0896609, 1)
+scale = Vector2(1.129661, 1)
 texture = ExtResource("47_hwghf")
 
 [node name="BodyAnimationTree" type="AnimationTree" parent="PlayerAnimation" unique_id=1975829203]
@@ -721,6 +740,8 @@ anim_player = NodePath("../HeadAnimationPlayer")
 parameters/HeadAnimations/blend_position = Vector2(0, 0)
 parameters/HeadAnimations/0/Sprint/blend_amount = 0.0
 parameters/HeadAnimations/0/TimeScale/scale = 1.5
+parameters/HeadAnimations/1/Sprint/blend_amount = 0.0
+parameters/HeadAnimations/1/TimeScale/scale = 1.5
 parameters/HeadAnimations/3/Sprint/blend_amount = 0.0
 parameters/HeadAnimations/3/TimeScale/scale = 1.5
 
