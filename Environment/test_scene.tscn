@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://y32qntaiguxf"]
+
+[ext_resource type="PackedScene" uid="uid://h8187ermycbd" path="res://Project Purgatory/Entities/Player/player.tscn" id="1_l108f"]
+
+[sub_resource type="Gradient" id="Gradient_ia1lp"]
+offsets = PackedFloat32Array(0, 0.59, 1)
+colors = PackedColorArray(0.52156866, 0.8666667, 0.48235294, 1, 0, 0, 0, 0, 1, 0.78039217, 0.48235294, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 100
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sasra"]
+gradient = SubResource("Gradient_ia1lp")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0.1965812, 0.052991454)
+
+[node name="Node2D" type="Node2D" unique_id=1678099518]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=927627153]
+z_index = -2
+position = Vector2(580.75, 319.75)
+scale = Vector2(1162.5, 640.5)
+texture = SubResource("GradientTexture2D_sasra")
+
+[node name="Player" parent="." unique_id=638193847 instance=ExtResource("1_l108f")]

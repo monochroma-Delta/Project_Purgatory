@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://byheeu0fifgys" path="res://AliceSprites/LeftSprites/UpperSideHair2.png" id="25_sb1uu"]
 [ext_resource type="Texture2D" uid="uid://brb0ry140hwsy" path="res://AliceSprites/LeftSprites/UpperSideHair.png" id="26_t4ln1"]
 [ext_resource type="Texture2D" uid="uid://q0xd0gtc4dqy" path="res://AliceSprites/LeftSprites/BangHair.png" id="27_jsp28"]
-[ext_resource type="Texture2D" uid="uid://b48x1wmjqsx2s" path="res://AliceSprites/BackSprites/Legging.png" id="28_3gcsh"]
 [ext_resource type="Texture2D" uid="uid://qkipqad6ikmi" path="res://AliceSprites/BackSprites/Gauntlet.png" id="29_v1qhd"]
 [ext_resource type="Texture2D" uid="uid://c6cph4lb7mtaf" path="res://AliceSprites/BackSprites/Chestplate.png" id="30_p1dx7"]
 [ext_resource type="Texture2D" uid="uid://2coh0akfb6wm" path="res://AliceSprites/BackSprites/BackHair.png" id="31_piwni"]
@@ -555,11 +554,11 @@ scale = Vector2(8, 8)
 
 [node name="Legging" type="Sprite2D" parent="PlayerAnimation/UpSprites" unique_id=11062661]
 position = Vector2(3, -3)
-texture = ExtResource("28_3gcsh")
+texture = ExtResource("4_phah1")
 
 [node name="Legging2" type="Sprite2D" parent="PlayerAnimation/UpSprites" unique_id=1541608381]
 position = Vector2(-3, -3)
-texture = ExtResource("28_3gcsh")
+texture = ExtResource("4_phah1")
 flip_h = true
 
 [node name="Body" type="Node2D" parent="PlayerAnimation/UpSprites" unique_id=620751185]
@@ -567,6 +566,25 @@ flip_h = true
 [node name="Gauntlet" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body" unique_id=2063251717]
 position = Vector2(-10, -10)
 texture = ExtResource("29_v1qhd")
+
+[node name="UpWeaponPlaceHolder" type="Node2D" parent="PlayerAnimation/UpSprites/Body/Gauntlet" unique_id=1646130383]
+
+[node name="UpSpear" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body/Gauntlet/UpWeaponPlaceHolder" unique_id=768991612]
+z_index = 1
+position = Vector2(0.17095089, -8.123201)
+rotation = 0.010471975
+scale = Vector2(0.9999998, -0.99999976)
+texture = ExtResource("10_1e8y2")
+
+[node name="UpSword" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body/Gauntlet/UpWeaponPlaceHolder" unique_id=1505254698]
+visible = false
+position = Vector2(45.25, 3.5000029)
+texture = ExtResource("11_e2n0g")
+
+[node name="UpGreatSword" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body/Gauntlet/UpWeaponPlaceHolder" unique_id=703444248]
+visible = false
+position = Vector2(63.375, 1.5)
+texture = ExtResource("12_ri0t7")
 
 [node name="Gauntlet2" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body" unique_id=1562859803]
 position = Vector2(10, -10)
