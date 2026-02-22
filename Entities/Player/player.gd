@@ -35,16 +35,16 @@ func _physics_process(delta: float) -> void:
 		body_animation_tree["parameters/conditions/spear"] = true
 		body_animation_tree["parameters/conditions/greatsword"] = false
 		body_animation_tree["parameters/conditions/longsword"] = false
-		body_animation_tree["parameters/BodySpearAnimations/blend_position"] = direction
+		body_animation_tree["parameters/BodySpearAnimations/blend_position"] = velocity.normalized()
 	elif longsword:
 		body_animation_tree["parameters/conditions/longsword"] = true
 		body_animation_tree["parameters/conditions/spear"] = false
 		body_animation_tree["parameters/conditions/greatsword"] = false
-		body_animation_tree["parameters/BodyLongswordAnimations/blend_position"] = direction
+		body_animation_tree["parameters/BodyLongswordAnimations/blend_position"] = velocity.normalized()
 	elif greatsword:
 		body_animation_tree["parameters/conditions/greatsword"] = true
 		body_animation_tree["parameters/conditions/longsword"] = false
 		body_animation_tree["parameters/conditions/spear"] = false
-		body_animation_tree["parameters/BodyGreatswordAnimations/blend_position"] = direction
-	head_animation_tree["parameters/HeadAnimations/blend_position"] = direction
+		body_animation_tree["parameters/BodyGreatswordAnimations/blend_position"] = velocity.normalized()
+	head_animation_tree["parameters/HeadAnimations/blend_position"] = velocity.normalized()  
 	
