@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://y32qntaiguxf"]
 
 [ext_resource type="PackedScene" uid="uid://h8187ermycbd" path="res://Project Purgatory/Entities/Player/player.tscn" id="1_l108f"]
+[ext_resource type="Texture2D" uid="uid://6oy1k6254aov" path="res://WeaponSprites/LongSwords/SilverSword.png" id="2_5gq85"]
+[ext_resource type="Script" uid="uid://c4w3nnfl8bsdl" path="res://Project Purgatory/Environment/area_2d_3.gd" id="3_dnrwq"]
+[ext_resource type="Texture2D" uid="uid://cp8qmpa1p0hfo" path="res://WeaponSprites/Spears/SilverSpear.png" id="3_ra46c"]
+[ext_resource type="Texture2D" uid="uid://c85alk0gfqyh4" path="res://WeaponSprites/GreatSwords/SilverGreatSword.png" id="4_3qptj"]
+[ext_resource type="Script" uid="uid://b3clfyw06mkcu" path="res://Project Purgatory/Environment/area_2d_2.gd" id="5_jxxl7"]
+[ext_resource type="Script" uid="uid://cvvpn8myhhh7h" path="res://Project Purgatory/Environment/area_2d.gd" id="7_5nmwx"]
 
 [sub_resource type="Gradient" id="Gradient_ia1lp"]
 offsets = PackedFloat32Array(0, 0.59, 1)
@@ -13,6 +19,9 @@ gradient = SubResource("Gradient_ia1lp")
 fill_from = Vector2(1, 1)
 fill_to = Vector2(0.1965812, 0.052991454)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmt14"]
+size = Vector2(10.625, 61.187496)
+
 [node name="Node2D" type="Node2D" unique_id=1678099518]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=927627153]
@@ -20,5 +29,53 @@ z_index = -2
 position = Vector2(580.75, 319.75)
 scale = Vector2(1162.5, 640.5)
 texture = SubResource("GradientTexture2D_sasra")
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=638193847 instance=ExtResource("1_l108f")]
+
+[node name="claymore" type="Sprite2D" parent="." unique_id=1163072499]
+position = Vector2(-662, -626.99994)
+rotation = 1.5707964
+scale = Vector2(7, 7)
+texture = ExtResource("2_5gq85")
+
+[node name="Area2D3" type="Area2D" parent="claymore" unique_id=1020833725]
+position = Vector2(55.285694, 0.57141876)
+scale = Vector2(1.1428571, 1.1428571)
+script = ExtResource("3_dnrwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="claymore/Area2D3" unique_id=2071087151]
+position = Vector2(-0.5625, -1.6875)
+shape = SubResource("RectangleShape2D_cmt14")
+
+[node name="spear" type="Sprite2D" parent="." unique_id=1663140000]
+position = Vector2(-615, -431)
+rotation = 1.5707964
+scale = Vector2(8, 8)
+texture = ExtResource("3_ra46c")
+
+[node name="Area2D2" type="Area2D" parent="spear" unique_id=1387576315]
+position = Vector2(23.875, 6.375)
+script = ExtResource("5_jxxl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spear/Area2D2" unique_id=1114374389]
+position = Vector2(-23.5, -6.65625)
+shape = SubResource("RectangleShape2D_cmt14")
+
+[node name="shortsword" type="Sprite2D" parent="." unique_id=865051621]
+position = Vector2(-648, -246)
+rotation = 1.5707964
+scale = Vector2(8, 8)
+texture = ExtResource("4_3qptj")
+
+[node name="Area2D" type="Area2D" parent="shortsword" unique_id=1508126748]
+position = Vector2(0.75, 2.2500002)
+script = ExtResource("7_5nmwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shortsword/Area2D" unique_id=1390703178]
+position = Vector2(-48.125, -0.9999979)
+shape = SubResource("RectangleShape2D_cmt14")
+
+[connection signal="body_entered" from="claymore/Area2D3" to="claymore/Area2D3" method="_on_body_entered"]
+[connection signal="body_entered" from="spear/Area2D2" to="spear/Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="shortsword/Area2D" to="shortsword/Area2D" method="_on_body_entered"]

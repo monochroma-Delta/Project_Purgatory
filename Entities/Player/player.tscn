@@ -152,6 +152,7 @@ blend_point_3/node = SubResource("AnimationNodeBlendTree_nbmts")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
+sync = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3qd8p"]
 animation = &"SwordIdleLeft"
@@ -252,6 +253,7 @@ blend_point_3/node = SubResource("AnimationNodeBlendTree_piwni")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
+sync = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x22oy"]
 animation = &"SpearSprintLeft"
@@ -264,7 +266,7 @@ animation = &"SpearIdleLeft"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_1e8y2"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_e2n0g"]
-graph_offset = Vector2(-958.4, 184.31177)
+graph_offset = Vector2(-692.6115, 12.937769)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_fmdqi")
 nodes/Idle/position = Vector2(-1072, 112)
 nodes/Sprint/node = SubResource("AnimationNodeBlend2_6bda7")
@@ -353,6 +355,7 @@ blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
+sync = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_44nwt"]
 advance_mode = 2
@@ -366,16 +369,40 @@ advance_condition = &"longsword"
 advance_mode = 2
 advance_condition = &"greatsword"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cyx4s"]
+advance_mode = 2
+advance_condition = &"longsword"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_phah1"]
+advance_mode = 2
+advance_condition = &"spear"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7lubx"]
+advance_mode = 2
+advance_condition = &"greatsword"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ur6fg"]
+advance_mode = 2
+advance_condition = &"longsword"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x22oy"]
+advance_mode = 2
+advance_condition = &"greatsword"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fmdqi"]
+advance_mode = 2
+advance_condition = &"spear"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_86plw"]
 states/BodyGreatswordAnimations/node = SubResource("AnimationNodeBlendSpace2D_7lubx")
-states/BodyGreatswordAnimations/position = Vector2(507.7776, 190.40001)
+states/BodyGreatswordAnimations/position = Vector2(465.8714, 188.8)
 states/BodyLongswordAnimations/node = SubResource("AnimationNodeBlendSpace2D_ur6fg")
-states/BodyLongswordAnimations/position = Vector2(507.81598, 99.379196)
+states/BodyLongswordAnimations/position = Vector2(679.016, 99.88634)
 states/BodySpearAnimations/node = SubResource("AnimationNodeBlendSpace2D_wyv4u")
-states/BodySpearAnimations/position = Vector2(507.19485, 12.003199)
+states/BodySpearAnimations/position = Vector2(466.39487, 15.203198)
 states/Start/position = Vector2(207.2, 101.024)
-transitions = ["Start", "BodySpearAnimations", SubResource("AnimationNodeStateMachineTransition_44nwt"), "Start", "BodyLongswordAnimations", SubResource("AnimationNodeStateMachineTransition_86plw"), "Start", "BodyGreatswordAnimations", SubResource("AnimationNodeStateMachineTransition_xe4ap")]
-graph_offset = Vector2(17, -39)
+transitions = ["Start", "BodySpearAnimations", SubResource("AnimationNodeStateMachineTransition_44nwt"), "Start", "BodyLongswordAnimations", SubResource("AnimationNodeStateMachineTransition_86plw"), "Start", "BodyGreatswordAnimations", SubResource("AnimationNodeStateMachineTransition_xe4ap"), "BodySpearAnimations", "BodyLongswordAnimations", SubResource("AnimationNodeStateMachineTransition_cyx4s"), "BodyLongswordAnimations", "BodySpearAnimations", SubResource("AnimationNodeStateMachineTransition_phah1"), "BodyLongswordAnimations", "BodyGreatswordAnimations", SubResource("AnimationNodeStateMachineTransition_7lubx"), "BodyGreatswordAnimations", "BodyLongswordAnimations", SubResource("AnimationNodeStateMachineTransition_ur6fg"), "BodySpearAnimations", "BodyGreatswordAnimations", SubResource("AnimationNodeStateMachineTransition_x22oy"), "BodyGreatswordAnimations", "BodySpearAnimations", SubResource("AnimationNodeStateMachineTransition_fmdqi")]
+graph_offset = Vector2(42, 2)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_phah1"]
 animation = &"IdleRight"
@@ -637,6 +664,7 @@ position = Vector2(6, -15)
 texture = ExtResource("5_7lubx")
 
 [node name="Gauntlet1" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm1" unique_id=744066453]
+z_index = 1
 position = Vector2(-0.5, 6.5)
 texture = ExtResource("6_ur6fg")
 
@@ -659,7 +687,8 @@ texture = ExtResource("11_e2n0g")
 
 [node name="LeftGreatSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm1/Gauntlet1/LeftWeaponPlaceHolder" unique_id=728029285]
 visible = false
-position = Vector2(63.375004, 1.500001)
+position = Vector2(-15.941907, -5.9496765)
+rotation = -1.1547961
 texture = ExtResource("12_ri0t7")
 
 [node name="Chestplate" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body" unique_id=687023546]
@@ -667,10 +696,12 @@ position = Vector2(0, -12)
 texture = ExtResource("7_x22oy")
 
 [node name="Arm" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body" unique_id=846573290]
+z_index = 1
 position = Vector2(-6.5, -15.5)
 texture = ExtResource("8_fmdqi")
 
 [node name="Gauntlet" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm" unique_id=1355128386]
+z_index = 1
 position = Vector2(0, 7)
 texture = ExtResource("9_6bda7")
 
@@ -688,7 +719,7 @@ texture = ExtResource("11_e2n0g")
 
 [node name="RightGreatSword" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Arm/Gauntlet/RightWeaponPlaceHolder" unique_id=510607668]
 visible = false
-position = Vector2(63.375, 1.5)
+z_index = -1
 texture = ExtResource("12_ri0t7")
 
 [node name="Head" type="Node2D" parent="PlayerAnimation/RightSprites/Body" unique_id=404324860]
@@ -699,7 +730,6 @@ position = Vector2(-2.5, -21)
 texture = ExtResource("2_3t7an")
 
 [node name="BackHair" type="Sprite2D" parent="PlayerAnimation/RightSprites/Body/Head" unique_id=1244972442]
-z_index = -1
 position = Vector2(-12, -21.5)
 texture = ExtResource("3_cyx4s")
 
@@ -847,15 +877,6 @@ flip_h = true
 position = Vector2(0, -11.5)
 texture = ExtResource("35_u85sn")
 
-[node name="Arm" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body" unique_id=636369093]
-position = Vector2(-8.5, -14.5)
-texture = ExtResource("36_p086k")
-
-[node name="Gauntlet" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm" unique_id=284514019]
-z_index = 1
-position = Vector2(-1.5, 6.5)
-texture = ExtResource("37_56kgu")
-
 [node name="Arm1" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body" unique_id=1257250453]
 position = Vector2(8.5, -14.5)
 skew = -0.14486232
@@ -887,6 +908,14 @@ position = Vector2(-3.6743615, -16.025679)
 rotation = 0.2522623
 skew = -0.43284166
 texture = ExtResource("12_ri0t7")
+
+[node name="Arm" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body" unique_id=636369093]
+position = Vector2(-8.5, -14.5)
+texture = ExtResource("36_p086k")
+
+[node name="Gauntlet" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm" unique_id=284514019]
+position = Vector2(-1.5, 6.5)
+texture = ExtResource("37_56kgu")
 
 [node name="Head" type="Node2D" parent="PlayerAnimation/DownSprites" unique_id=2039253707]
 
