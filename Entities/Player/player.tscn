@@ -34,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://c6cph4lb7mtaf" path="res://AliceSprites/BackSprites/Chestplate.png" id="30_p1dx7"]
 [ext_resource type="Texture2D" uid="uid://2coh0akfb6wm" path="res://AliceSprites/BackSprites/BackHair.png" id="31_piwni"]
 [ext_resource type="Texture2D" uid="uid://ckbah5va07ba4" path="res://AliceSprites/BackSprites/Ahoge.png" id="32_3qd8p"]
-[ext_resource type="Texture2D" uid="uid://bt355vh8xg76w" path="res://AliceSprites/BackSprites/BackHair2.png" id="33_cyx4s"]
 [ext_resource type="Texture2D" uid="uid://ce6fy644h0taq" path="res://AliceSprites/FrontSprites/BackHair.png" id="33_fakdl"]
 [ext_resource type="Texture2D" uid="uid://dx2sv1pnhn6y6" path="res://AliceSprites/FrontSprites/Legging.png" id="34_ijqpg"]
 [ext_resource type="Texture2D" uid="uid://bqpaxio0vf72c" path="res://AliceSprites/FrontSprites/Chestplate.png" id="35_u85sn"]
@@ -53,205 +52,9 @@
 [ext_resource type="AnimationLibrary" uid="uid://bbof4hokgtp13" path="res://Project Purgatory/Animations/PlayerAnimations/PlayerBodyAnimations.res" id="49_oqnu7"]
 [ext_resource type="Animation" uid="uid://cvxx3r86rpm7o" path="res://Project Purgatory/Animations/PlayerAnimations/Blink.res" id="50_phah1"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nlbhx"]
-animation = &"GreatSwordIdleLeft"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_iu54k"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g0sd6"]
-animation = &"GreatSwordSprintLeft"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_nbmts"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cyx4s"]
-graph_offset = Vector2(-377.53592, -14.332196)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_nlbhx")
-nodes/Idle/position = Vector2(-160, 80)
-nodes/Sprint/node = SubResource("AnimationNodeBlend2_iu54k")
-nodes/Sprint/position = Vector2(64, 96)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_nbmts")
-nodes/TimeScale/position = Vector2(-96, 272)
-nodes/Sprint_/node = SubResource("AnimationNodeAnimation_g0sd6")
-nodes/Sprint_/position = Vector2(-336, 288)
-node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_itjtq"]
-animation = &"GreatSwordIdleDown"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_x22oy"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ag1xb"]
-animation = &"GreatSwordSprintDown"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_nlbhx"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_iu54k"]
-graph_offset = Vector2(-541.8474, 70.64358)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_itjtq")
-nodes/Idle/position = Vector2(-320, 144)
-nodes/Sprint/node = SubResource("AnimationNodeBlend2_x22oy")
-nodes/Sprint/position = Vector2(32, 128)
-nodes/Sprint_/node = SubResource("AnimationNodeAnimation_ag1xb")
-nodes/Sprint_/position = Vector2(-512, 352)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_nlbhx")
-nodes/TimeScale/position = Vector2(-240, 336)
-node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h7k4v"]
-animation = &"GreatSwordIdleUp"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_sb1uu"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t4ln1"]
-animation = &"GreatSwordSprintUp"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_jsp28"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_g0sd6"]
-graph_offset = Vector2(-399.7265, 15.027124)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_h7k4v")
-nodes/Idle/position = Vector2(-176, 112)
-nodes/Sprint/node = SubResource("AnimationNodeBlend2_sb1uu")
-nodes/Sprint/position = Vector2(64, 80)
-nodes/Sprint_/node = SubResource("AnimationNodeAnimation_t4ln1")
-nodes/Sprint_/position = Vector2(-320, 288)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_jsp28")
-nodes/TimeScale/position = Vector2(-96, 304)
-node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3gcsh"]
-animation = &"GreatSwordIdleRight"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_v1qhd"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p1dx7"]
-animation = &"GreatSwordSprintRight"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_piwni"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_nbmts"]
-graph_offset = Vector2(-424.72723, 59.93821)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_3gcsh")
-nodes/Idle/position = Vector2(-288, 112)
-nodes/Sprint/node = SubResource("AnimationNodeBlend2_v1qhd")
-nodes/Sprint/position = Vector2(-16, 96)
-nodes/Sprint_/node = SubResource("AnimationNodeAnimation_p1dx7")
-nodes/Sprint_/position = Vector2(-464, 320)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_piwni")
-nodes/TimeScale/position = Vector2(-208, 320)
-node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
-
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_7lubx"]
-blend_point_0/node = SubResource("AnimationNodeBlendTree_cyx4s")
-blend_point_0/pos = Vector2(-1, 0)
-blend_point_1/node = SubResource("AnimationNodeBlendTree_iu54k")
-blend_point_1/pos = Vector2(0, 1.1)
-blend_point_2/node = SubResource("AnimationNodeBlendTree_g0sd6")
-blend_point_2/pos = Vector2(0, -1.1)
-blend_point_3/node = SubResource("AnimationNodeBlendTree_nbmts")
-blend_point_3/pos = Vector2(1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3qd8p"]
-animation = &"SwordIdleLeft"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_fakdl"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ijqpg"]
-animation = &"SwordSprintLeft"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_u85sn"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_h7k4v"]
-graph_offset = Vector2(-367.7431, 28.761816)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_3qd8p")
-nodes/Idle/position = Vector2(-304, 96)
-nodes/Sprint/node = SubResource("AnimationNodeBlend2_fakdl")
-nodes/Sprint/position = Vector2(16, 48)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_u85sn")
-nodes/TimeScale/position = Vector2(-144, 240)
-nodes/Sprint_/node = SubResource("AnimationNodeAnimation_ijqpg")
-nodes/Sprint_/position = Vector2(-368, 272)
-node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sb1uu"]
-animation = &"SwordIdleDown"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_t4ln1"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jsp28"]
-animation = &"SwordSprintDown"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_3gcsh"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_v1qhd"]
-graph_offset = Vector2(-411.8003, 49.77938)
-nodes/output/position = Vector2(208, 128)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_sb1uu")
-nodes/Idle/position = Vector2(-288, 128)
-nodes/Sprint/node = SubResource("AnimationNodeBlend2_t4ln1")
-nodes/Sprint/position = Vector2(-32, 128)
-nodes/Sprint_/node = SubResource("AnimationNodeAnimation_jsp28")
-nodes/Sprint_/position = Vector2(-448, 320)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_3gcsh")
-nodes/TimeScale/position = Vector2(-240, 320)
-node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p086k"]
-animation = &"SwordIdleUp"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_56kgu"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sexpx"]
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_iq5ux"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_p1dx7"]
-graph_offset = Vector2(-403.4909, 17.090893)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_p086k")
-nodes/Idle/position = Vector2(-256, 128)
-nodes/Sprint/node = SubResource("AnimationNodeBlend2_56kgu")
-nodes/Sprint/position = Vector2(0, 48)
-nodes/Sprint_/node = SubResource("AnimationNodeAnimation_sexpx")
-nodes/Sprint_/position = Vector2(-352, 304)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_iq5ux")
-nodes/TimeScale/position = Vector2(-160, 320)
-node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1fn6i"]
-animation = &"SwordIdleRight"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_fcuvw"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_162g7"]
-animation = &"SwordSprintRight"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_33ces"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_piwni"]
-graph_offset = Vector2(-322.4, 31.2)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_1fn6i")
-nodes/Idle/position = Vector2(-288, 80)
-nodes/Sprint/node = SubResource("AnimationNodeBlend2_fcuvw")
-nodes/Sprint/position = Vector2(79.64708, 143.48186)
-nodes/Sprint_/node = SubResource("AnimationNodeAnimation_162g7")
-nodes/Sprint_/position = Vector2(-432, 256)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_33ces")
-nodes/TimeScale/position = Vector2(-208, 256)
-node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ur6fg"]
-blend_point_0/node = SubResource("AnimationNodeBlendTree_h7k4v")
-blend_point_0/pos = Vector2(-1, 0)
-blend_point_1/node = SubResource("AnimationNodeBlendTree_v1qhd")
-blend_point_1/pos = Vector2(0, 1.1)
-blend_point_2/node = SubResource("AnimationNodeBlendTree_p1dx7")
-blend_point_2/pos = Vector2(0, -1.1)
-blend_point_3/node = SubResource("AnimationNodeBlendTree_piwni")
-blend_point_3/pos = Vector2(1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x22oy"]
 animation = &"SpearSprintLeft"
@@ -264,7 +67,7 @@ animation = &"SpearIdleLeft"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_1e8y2"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_e2n0g"]
-graph_offset = Vector2(-958.4, 184.31177)
+graph_offset = Vector2(-1018.6664, 184.31177)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_fmdqi")
 nodes/Idle/position = Vector2(-1072, 112)
 nodes/Sprint/node = SubResource("AnimationNodeBlend2_6bda7")
@@ -375,7 +178,7 @@ states/BodySpearAnimations/node = SubResource("AnimationNodeBlendSpace2D_wyv4u")
 states/BodySpearAnimations/position = Vector2(507.19485, 12.003199)
 states/Start/position = Vector2(207.2, 101.024)
 transitions = ["Start", "BodySpearAnimations", SubResource("AnimationNodeStateMachineTransition_44nwt"), "Start", "BodyLongswordAnimations", SubResource("AnimationNodeStateMachineTransition_86plw"), "Start", "BodyGreatswordAnimations", SubResource("AnimationNodeStateMachineTransition_xe4ap")]
-graph_offset = Vector2(17, -39)
+graph_offset = Vector2(-17, -24)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_phah1"]
 animation = &"IdleRight"
@@ -422,27 +225,7 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_44nwt")
 nodes/TimeScale/position = Vector2(-288, 400)
 node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3t7an"]
-animation = &"IdleUp"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_cyx4s"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_86plw"]
-animation = &"SprintUp"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_xe4ap"]
-
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1e8y2"]
-graph_offset = Vector2(-442.86807, 128.07942)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_3t7an")
-nodes/Idle/position = Vector2(-188.60983, 179.87265)
-nodes/Sprint/node = SubResource("AnimationNodeBlend2_cyx4s")
-nodes/Sprint/position = Vector2(51.502583, 196.27055)
-nodes/Sprint_/node = SubResource("AnimationNodeAnimation_86plw")
-nodes/Sprint_/position = Vector2(-480, 400)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_xe4ap")
-nodes/TimeScale/position = Vector2(-240, 384)
-node_connections = [&"output", 0, &"Sprint", &"Sprint", 0, &"Idle", &"Sprint", 1, &"TimeScale", &"TimeScale", 0, &"Sprint_"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1e8y2"]
 animation = &"IdleRight"
@@ -599,7 +382,7 @@ height = 202.0
 
 [node name="Player" type="CharacterBody2D" unique_id=638193847]
 script = ExtResource("1_mq36u")
-greatsword = true
+spear = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=1338458718 node_paths=PackedStringArray("actor", "initial_state")]
 script = ExtResource("2_7lubx")
@@ -767,18 +550,16 @@ texture = ExtResource("27_jsp28")
 
 [node name="UpSprites" type="Node2D" parent="PlayerAnimation" unique_id=1533558840]
 visible = false
-position = Vector2(0, 4)
 scale = Vector2(8, 8)
-
-[node name="Legging2" type="Sprite2D" parent="PlayerAnimation/UpSprites" unique_id=1541608381]
-modulate = Color(0.4862745, 0.4862745, 0.5019608, 1)
-position = Vector2(-3, -3)
-texture = ExtResource("4_phah1")
-flip_h = true
 
 [node name="Legging" type="Sprite2D" parent="PlayerAnimation/UpSprites" unique_id=11062661]
 position = Vector2(3, -3)
 texture = ExtResource("4_phah1")
+
+[node name="Legging2" type="Sprite2D" parent="PlayerAnimation/UpSprites" unique_id=1541608381]
+position = Vector2(-3, -3)
+texture = ExtResource("4_phah1")
+flip_h = true
 
 [node name="Body" type="Node2D" parent="PlayerAnimation/UpSprites" unique_id=620751185]
 
@@ -790,10 +571,9 @@ texture = ExtResource("29_v1qhd")
 
 [node name="UpSpear" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body/Gauntlet/UpWeaponPlaceHolder" unique_id=768991612]
 z_index = 1
-position = Vector2(-0.62316775, -6.4893503)
-rotation = -0.21791756
-scale = Vector2(1, -1)
-skew = 0.08028515
+position = Vector2(0.17095089, -8.123201)
+rotation = 0.010471975
+scale = Vector2(0.9999998, -0.99999976)
 texture = ExtResource("10_1e8y2")
 
 [node name="UpSword" type="Sprite2D" parent="PlayerAnimation/UpSprites/Body/Gauntlet/UpWeaponPlaceHolder" unique_id=1505254698]
@@ -817,12 +597,8 @@ texture = ExtResource("30_p1dx7")
 
 [node name="Head" type="Node2D" parent="PlayerAnimation/UpSprites" unique_id=37918258]
 
-[node name="BackHair2" type="Sprite2D" parent="PlayerAnimation/UpSprites/Head" unique_id=1428996202]
-texture = ExtResource("33_cyx4s")
-
 [node name="BackHair" type="Sprite2D" parent="PlayerAnimation/UpSprites/Head" unique_id=710221574]
 position = Vector2(0, -25)
-scale = Vector2(0.98499995, 1)
 texture = ExtResource("31_piwni")
 
 [node name="Ahoge" type="Sprite2D" parent="PlayerAnimation/UpSprites/Head" unique_id=451436664]
@@ -852,7 +628,6 @@ position = Vector2(-8.5, -14.5)
 texture = ExtResource("36_p086k")
 
 [node name="Gauntlet" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm" unique_id=284514019]
-z_index = 1
 position = Vector2(-1.5, 6.5)
 texture = ExtResource("37_56kgu")
 
@@ -863,35 +638,33 @@ texture = ExtResource("36_p086k")
 flip_h = true
 
 [node name="Gauntlet1" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1" unique_id=1019801824]
-z_index = 1
 position = Vector2(1.5, 6.5)
 texture = ExtResource("37_56kgu")
 flip_h = true
 
 [node name="DownWeaponPlaceHolder" type="Node2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1" unique_id=1436241958]
 
-[node name="DownSpear" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1/DownWeaponPlaceHolder" unique_id=372723609]
+[node name="RightSpear" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1/DownWeaponPlaceHolder" unique_id=372723609]
 z_index = -1
 position = Vector2(-0.25, -9.25)
 rotation = -0.010086626
 scale = Vector2(0.9999998, -0.99999976)
 texture = ExtResource("10_1e8y2")
 
-[node name="DownSword" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1/DownWeaponPlaceHolder" unique_id=35261679]
+[node name="RightSword" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1/DownWeaponPlaceHolder" unique_id=35261679]
 visible = false
 position = Vector2(45.25, 3.5000029)
 texture = ExtResource("11_e2n0g")
 
-[node name="DownGreatSword" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1/DownWeaponPlaceHolder" unique_id=1268242509]
-position = Vector2(-3.6743615, -16.025679)
-rotation = 0.2522623
-skew = -0.43284166
+[node name="RightGreatSword" type="Sprite2D" parent="PlayerAnimation/DownSprites/Body/Arm1/Gauntlet1/DownWeaponPlaceHolder" unique_id=1268242509]
+visible = false
+position = Vector2(63.375, 1.5)
 texture = ExtResource("12_ri0t7")
 
 [node name="Head" type="Node2D" parent="PlayerAnimation/DownSprites" unique_id=2039253707]
 
 [node name="BackHair" type="Sprite2D" parent="PlayerAnimation/DownSprites/Head" unique_id=1787771952]
-z_index = -2
+z_index = -1
 position = Vector2(-0.5, -17)
 texture = ExtResource("33_fakdl")
 
@@ -965,23 +738,7 @@ parameters/conditions/greatsword = false
 parameters/conditions/longsword = false
 parameters/conditions/spear = true
 parameters/BodyGreatswordAnimations/blend_position = Vector2(0, 0)
-parameters/BodyGreatswordAnimations/0/Sprint/blend_amount = 0.0
-parameters/BodyGreatswordAnimations/0/TimeScale/scale = 1.5
-parameters/BodyGreatswordAnimations/1/Sprint/blend_amount = 0.0
-parameters/BodyGreatswordAnimations/1/TimeScale/scale = 1.5
-parameters/BodyGreatswordAnimations/2/Sprint/blend_amount = 0.0
-parameters/BodyGreatswordAnimations/2/TimeScale/scale = 1.5
-parameters/BodyGreatswordAnimations/3/Sprint/blend_amount = 0.0
-parameters/BodyGreatswordAnimations/3/TimeScale/scale = 1.5
 parameters/BodyLongswordAnimations/blend_position = Vector2(0, 0)
-parameters/BodyLongswordAnimations/0/Sprint/blend_amount = 0.0
-parameters/BodyLongswordAnimations/0/TimeScale/scale = 1.5
-parameters/BodyLongswordAnimations/1/Sprint/blend_amount = 0.0
-parameters/BodyLongswordAnimations/1/TimeScale/scale = 1.5
-parameters/BodyLongswordAnimations/2/Sprint/blend_amount = 0.0
-parameters/BodyLongswordAnimations/2/TimeScale/scale = 1.5
-parameters/BodyLongswordAnimations/3/Sprint/blend_amount = 0.0
-parameters/BodyLongswordAnimations/3/TimeScale/scale = 1.5
 parameters/BodySpearAnimations/blend_position = Vector2(-0.3053633, 0.03168726)
 parameters/BodySpearAnimations/0/Sprint/blend_amount = 1.0
 parameters/BodySpearAnimations/0/TimeScale/scale = 1.5
@@ -1003,8 +760,6 @@ parameters/HeadAnimations/0/Sprint/blend_amount = 0.0
 parameters/HeadAnimations/0/TimeScale/scale = 1.5
 parameters/HeadAnimations/1/Sprint/blend_amount = 0.0
 parameters/HeadAnimations/1/TimeScale/scale = 1.5
-parameters/HeadAnimations/2/Sprint/blend_amount = 0.0
-parameters/HeadAnimations/2/TimeScale/scale = 1.5
 parameters/HeadAnimations/3/Sprint/blend_amount = 0.0
 parameters/HeadAnimations/3/TimeScale/scale = 1.5
 

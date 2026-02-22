@@ -13,7 +13,7 @@ func physics_update(_delta: float) -> void:
 	
 	owner.head_animation_tree["parameters/HeadAnimations/0/Sprint/blend_amount"] = lerpf(owner.head_animation_tree["parameters/HeadAnimations/0/Sprint/blend_amount"],1, 0.1) 
 	owner.head_animation_tree["parameters/HeadAnimations/1/Sprint/blend_amount"] = lerpf(owner.head_animation_tree["parameters/HeadAnimations/1/Sprint/blend_amount"],1, 0.1) 
-	owner.head_animation_tree["parameters/HeadAnimations/2/Sprint/blend_amount"] = lerpf(owner.head_animation_tree["parameters/HeadAnimations/2/Sprint/blend_amount"],1, 0.1) 
+	#owner.head_animation_tree["parameters/HeadAnimations/2/Sprint/blend_amount"] = lerpf(owner.head_animation_tree["parameters/HeadAnimations/2/Sprint/blend_amount"],1, 0.1) 
 	owner.head_animation_tree["parameters/HeadAnimations/3/Sprint/blend_amount"] = lerpf(owner.head_animation_tree["parameters/HeadAnimations/3/Sprint/blend_amount"],1, 0.1) 
 	
 	if Input.get_vector("LEFT","RIGHT","UP","DOWN") == Vector2.ZERO:
